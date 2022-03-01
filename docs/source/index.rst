@@ -1,23 +1,32 @@
-.. Gym Test documentation master file, created by
-   sphinx-quickstart on Tue Mar  1 12:58:11 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Gym Test's documentation!
+Gym's documentation
 ====================================
+
+Gym is a standard API for reinforcement learning, and a diverse collection of reference environments.
+
+**The Gym interface is simple, pythonic, and capable of representing general RL problems:**
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Base
 
    introduction
+   tutorials/index
+   vector/index
+   spaces/index
+   wrappers/index_in_progress
+   environment_creation/index
 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: Documentation
 
-   usage
+   documentation/core
+   documentation/vector
+   documentation/spaces
+   documentation/wrappers
+   documentation/utils
 
 
 .. toctree::
@@ -25,6 +34,11 @@ Welcome to Gym Test's documentation!
    :caption: Environments
 
    environments/atari/index
+   environments/mujoco/index
+   environments/toy_text/index
+   environments/classic_control/index
+   environments/box2d/index
+   environments/third_party_environments/index
 
 
 

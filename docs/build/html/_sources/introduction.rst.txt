@@ -16,21 +16,9 @@ Interacting with the Environment
 
 Gym implements the classic “agent-environment loop”:
 
-.. raw:: html
-
-   <html>
-
-.. raw:: html
-
-   <p style="width:50%;margin-left:auto;margin-right:auto">
-
-.. raw:: html
-
-   </p>
-
-.. raw:: html
-
-   </html>
+.. figure:: _static/diagrams/AE_loop.png
+   :width: 400 px
+   :align: center
 
 The agent performs some actions in the environment (usually by passing
 some control inputs to the environment, e.g. torque inputs of motors)

@@ -15,13 +15,14 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
+from gym import __version__ as gym_version
 
-project = 'Gym Test'
-copyright = '2022, MG'
-author = 'MG'
+project = 'Gym'
+copyright = '2022, Manuel Goulão'
+author = 'Manuel Goulão'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = gym_version
 
 
 # -- General configuration ---------------------------------------------------
@@ -68,10 +69,15 @@ napoleon_attr_annotations = True
 html_theme = "furo"
 
 html_theme_options = {
-
+    "light_logo": "img/gym_logo_black.svg",
+    "dark_logo": "img/gym_logo_white.svg",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = [
+    'css/custom.css',
+]

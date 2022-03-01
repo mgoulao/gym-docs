@@ -3,13 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Breakout" href="breakout.html" /><link rel="prev" title="Vector" href="../../usage.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="AirRaid" href="air_raid.html" /><link rel="prev" title="gym.utils" href="../../documentation/utils.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
-        <title>Atari - Gym Test 0.0.1 documentation</title>
+        <title>Atari - Gym 0.21.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=3c656993158f05539f962c5cea52a5e6c184bb8c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     
     
 
@@ -119,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Gym Test 0.0.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Gym 0.21.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -130,7 +131,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -141,8 +142,12 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/img/gym_logo_black.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/img/gym_logo_white.svg" alt="Dark Logo"/>
+  </div>
   
-  <span class="sidebar-brand-text">Gym Test 0.0.1 documentation</span>
+  <span class="sidebar-brand-text">Gym 0.21.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -153,17 +158,124 @@
   <p class="caption" role="heading"><span class="caption-text">Base</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vector/index.html">Vector API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spaces/index.html">Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wrappers/index_in_progress.html">Wrappers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment_creation/index.html">How to create new environments for Gym</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Vector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation/core.html">gym.core</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/vector.html">gym.vector</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/vector_utils.html">vector.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation/spaces.html">gym.spaces</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../documentation/wrappers.html">gym.wrappers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/wrappers_monitor.html">wrappers.monitor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation/utils.html">gym.utils</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Atari</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Atari</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="air_raid.html">AirRaid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alien.html">Alien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amidar.html">Amidar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assault.html">Assault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterix.html">Asterix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asteroids.html">Asteroids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atlantis.html">Atlantis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bank_heist.html">Bank Heist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="battle_zone.html">Battle Zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beam_rider.html">Beam Rider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="berzerk.html">Berzerk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bowling.html">Bowling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boxing.html">Boxing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="breakout.html">Breakout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="carnival.html">Carnival</a></li>
+<li class="toctree-l2"><a class="reference internal" href="centipede.html">Centipede</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chopper_command.html">ChopperCommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crazy_climber.html">Crazy Climber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demon_attack.html">Demon Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double_dunk.html">Double Dunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elevator_action.html">Elevator Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enduro.html">Enduro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fishing_derby.html">FishingDerby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freeway.html">Freeway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frostbite.html">Frostbite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gopher.html">Gopher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gravitar.html">Gravitar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ice_hockey.html">Ice Hockey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamesbond.html">James Bond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="journey_escape.html">JourneyEscape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kangaroo.html">Kangaroo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="krull.html">Krull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kung_fu_master.html">KungFuMaster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="montezuma_revenge.html">MontezumaRevenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ms_pacman.html">MsPacman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="name_this_game.html">NameThisGame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phoenix.html">Phoenix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pitfall.html">Pitfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pong.html">Pong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pooyan.html">Pooyan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="private_eye.html">PrivateEye</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qbert.html">Qbert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riverraid.html">Riverraid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="road_runner.html">RoadRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robotank.html">Robotank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seaquest.html">Seaquest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="skiing.html">Skiing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solaris.html">Solaris</a></li>
+<li class="toctree-l2"><a class="reference internal" href="space_invaders.html">SpaceInvaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="star_gunner.html">StarGunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tennis.html">Tennis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_pilot.html">TimePilot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutankham.html">Tutankham</a></li>
+<li class="toctree-l2"><a class="reference internal" href="up_n_down.html">UpNDown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="venture.html">Venture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video_pinball.html">VideoPinball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wizard_of_wor.html">WizardOfWor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yars_revenge.html">YarsRevenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zaxxon.html">Zaxxon</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mujoco/index.html">MuJoCo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/ant.html">Ant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/half_cheetah.html">HalfCheetah</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/hopper.html">Hopper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/humanoid_standup.html">HumanoidStandup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/humanoid.html">Humanoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/inverted_double_pendulum.html">InvertedDoublePendulum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/inverted_pendulum.html">InvertedPendulum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/reacher.html">Reacher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/swimmer.html">Swimmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mujoco/walker2d.html">Walker2d</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../toy_text/index.html">Toy Text</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../toy_text/blackjack.html">Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toy_text/taxi.html">Taxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toy_text/frozen_lake.html">Frozen lake</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../classic_control/index.html">Classic Control</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../classic_control/acrobot.html">Acrobot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../classic_control/cart_pole.html">CartPole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../classic_control/mountain_car_continuous.html">MountainCarContinuous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../classic_control/mountain_car.html">MountainCar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../classic_control/pendulum.html">Pendulum</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../box2d/index.html">Box2D</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../box2d/bipedal_walker.html">BipedalWalker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../box2d/car_racing.html">Car racing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../box2d/lunar_lander.html">LunarLander</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../third_party_environments/index.html">Third Party Environments</a></li>
 </ul>
 
 </div>
@@ -190,7 +302,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -200,6 +312,636 @@
 <h1>Atari<a class="headerlink" href="#atari" title="Permalink to this headline">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<p>Atari environments are simulated via the Arcade Learning Environment
+(ALE) <a class="reference external" href="#1">[1]</a>.</p>
+<section id="action-space">
+<h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this headline">#</a></h2>
+<p>The action space a subset of the
+following discrete set of legal actions:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 81%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Num</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>NOOP</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>FIRE</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>UP</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>RIGHT</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>LEFT</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>DOWN</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>UPRIGHT</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>UPLEFT</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>DOWNRIGHT</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>DOWNLEFT</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>UPFIRE</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>RIGHTFIRE</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>LEFTFIRE</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>DOWNFIRE</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>UPRIGHTFIRE</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>UPLEFTFIRE</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>DOWNRIGHTFIRE</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>DOWNLEFTFIRE</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>If you use v0 or v4 and the environment is initialized via <code class="docutils literal notranslate"><span class="pre">make</span></code>, the
+action space will usually be much smaller since most legal actions don’t
+have any effect. Thus, the enumeration of the actions will differ. The
+action space can be expanded to the full legal space by passing the
+keyword argument <code class="docutils literal notranslate"><span class="pre">full_action_space=True</span></code> to <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
+<p>The reduced action space of an Atari environment may depend on the
+flavor of the game. You can specify the flavor by providing the
+arguments <code class="docutils literal notranslate"><span class="pre">difficulty</span></code> and <code class="docutils literal notranslate"><span class="pre">mode</span></code> when constructing the environment.
+This documentation only provides details on the action spaces of default
+flavors.</p>
+</section>
+<section id="observation-space">
+<h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this headline">#</a></h2>
+<p>The observation issued by an Atari environment may be: - the RGB image
+that is displayed to a human player, - a grayscale version of that image
+or - the state of the 128 Bytes of RAM of the console.</p>
+</section>
+<section id="rewards">
+<h2>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">#</a></h2>
+<p>The exact reward dynamics depend on the environment and are usually
+documented in the game’s manual. You can find these manuals on
+<a class="reference external" href="https://atariage.com/">AtariAge</a>.</p>
+</section>
+<section id="stochasticity">
+<h2>Stochasticity<a class="headerlink" href="#stochasticity" title="Permalink to this headline">#</a></h2>
+<p>It was pointed out in <a class="reference external" href="#1">[1]</a> that Atari games are entirely
+deterministic. Thus, agents could achieve state of the art performance
+by simply memorizing an optimal sequence of actions while completely
+ignoring observations from the environment. To avoid this, ALE
+implements sticky actions: Instead of always simulating the action
+passed to the environment, there is a small probability that the
+previously executed action is used instead.</p>
+<p>On top of this, Gym implements stochastic frame skipping: In each
+environment step, the action is repeated for a random number of frames.
+This behavior may be altered by setting the keyword argument
+<code class="docutils literal notranslate"><span class="pre">frameskip</span></code> to either a positive integer or a tuple of two positive
+integers. If <code class="docutils literal notranslate"><span class="pre">frameskip</span></code> is an integer, frame skipping is
+deterministic, and in each step the action is repeated <code class="docutils literal notranslate"><span class="pre">frameskip</span></code>
+many times. Otherwise, if <code class="docutils literal notranslate"><span class="pre">frameskip</span></code> is a tuple, the number of
+skipped frames is chosen uniformly at random between <code class="docutils literal notranslate"><span class="pre">frameskip[0]</span></code>
+(inclusive) and <code class="docutils literal notranslate"><span class="pre">frameskip[1]</span></code> (exclusive) in each environment step.</p>
+</section>
+<section id="flavors">
+<h2>Flavors<a class="headerlink" href="#flavors" title="Permalink to this headline">#</a></h2>
+<p>Some games allow the user to set a difficulty level and a game mode.
+Different modes/difficulties may have different game dynamics and (if a
+reduced action space is used) different action spaces. We follow the
+convention of <a class="reference external" href="#2">[2]</a> and refer to the combination of difficulty
+level and game mode as a flavor of a game. The following table shows the
+available modes and difficulty levels for different Atari games:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 47%"/>
+<col style="width: 20%"/>
+<col style="width: 14%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Environment</p></th>
+<th class="head"><p>Valid Modes</p></th>
+<th class="head"><p>Valid Difficulties</p></th>
+<th class="head"><p>Default Mode</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adventure</p></td>
+<td><p>[0, 1, 2]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>AirRaid</p></td>
+<td><p>[1, …, 8]</p></td>
+<td><p>[0]</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Alien</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Amidar</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Assault</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Asterix</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Asteroids</p></td>
+<td><p>[0, …, 31, 128]</p></td>
+<td><p>[0, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Atlantis</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>BankHeist</p></td>
+<td><p>[0, 4, 8, 12, 16, 20, 24, 28]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>BattleZone</p></td>
+<td><p>[1, 2, 3]</p></td>
+<td><p>[0]</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>BeamRider</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Berzerk</p></td>
+<td><p>[1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18]</p></td>
+<td><p>[0]</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Bowling</p></td>
+<td><p>[0, 2, 4]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boxing</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Breakout</p></td>
+<td><p>[0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Carnival</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Centipede</p></td>
+<td><p>[22, 86]</p></td>
+<td><p>[0]</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-odd"><td><p>ChopperCommand</p></td>
+<td><p>[0, 2]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>CrazyClimber</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Defender</p></td>
+<td><p>[1, …, 9, 16]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>DemonAttack</p></td>
+<td><p>[1, 3, 5, 7]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>DoubleDunk</p></td>
+<td><p>[0, …, 15]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>ElevatorAction</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enduro</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>FishingDerby</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Freeway</p></td>
+<td><p>[0, …, 7]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Frostbite</p></td>
+<td><p>[0, 2]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gopher</p></td>
+<td><p>[0, 2]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Gravitar</p></td>
+<td><p>[0, …, 4]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hero</p></td>
+<td><p>[0, …, 4]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>IceHockey</p></td>
+<td><p>[0, 2]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jamesbond</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>JourneyEscape</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kangaroo</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Krull</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>KungFuMaster</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>MontezumaRevenge</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>MsPacman</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>NameThisGame</p></td>
+<td><p>[8, 24, 40]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phoenix</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Pitfall</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pong</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Pooyan</p></td>
+<td><p>[10, 30, 50, 70]</p></td>
+<td><p>[0]</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>PrivateEye</p></td>
+<td><p>[0, …, 4]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Qbert</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Riverraid</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>RoadRunner</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Robotank</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Seaquest</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Skiing</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Solaris</p></td>
+<td><p>[0]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>SpaceInvaders</p></td>
+<td><p>[0, …, 15]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>StarGunner</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tennis</p></td>
+<td><p>[0, 2]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>TimePilot</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1, 2]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tutankham</p></td>
+<td><p>[0, 4, 8, 12]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>UpNDown</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Venture</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, …, 3]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>VideoPinball</p></td>
+<td><p>[0, 2]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>WizardOfWor</p></td>
+<td><p>[0]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>YarsRevenge</p></td>
+<td><p>[0, 32, 64, 96]</p></td>
+<td><p>[0, 1]</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zaxxon</p></td>
+<td><p>[0, 8, 16, 24]</p></td>
+<td><p>[0]</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="common-arguments">
+<h2>Common Arguments<a class="headerlink" href="#common-arguments" title="Permalink to this headline">#</a></h2>
+<p>When initializing Atari environments via <code class="docutils literal notranslate"><span class="pre">gym.make</span></code>, you may pass some
+additional arguments. These work for any Atari environment. However,
+legal values for <code class="docutils literal notranslate"><span class="pre">mode</span></code> and <code class="docutils literal notranslate"><span class="pre">difficulty</span></code> depend on the environment.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: <code class="docutils literal notranslate"><span class="pre">int</span></code>. Game mode, see <a class="reference external" href="#2">[2]</a>. Legal values depend on
+the environment and are listed in the table above.</p>
+<p><code class="docutils literal notranslate"><span class="pre">difficulty</span></code>: <code class="docutils literal notranslate"><span class="pre">int</span></code>. Difficulty of the game, see <a class="reference external" href="#2">[2]</a>. Legal
+values depend on the environment and are listed in the table above.
+Together with <code class="docutils literal notranslate"><span class="pre">mode</span></code>, this determines the “flavor” of the game.</p>
+<p><code class="docutils literal notranslate"><span class="pre">obs_type</span></code>: <code class="docutils literal notranslate"><span class="pre">str</span></code>. This argument determines what observations are
+returned by the environment: - “ram”: The 128 Bytes of RAM are returned
+- “rgb”: An RGB rendering of the game is returned - “grayscale”: A
+grayscale rendering is returned</p>
+<p><code class="docutils literal notranslate"><span class="pre">frameskip</span></code>: <code class="docutils literal notranslate"><span class="pre">int</span></code> or a tuple of two <code class="docutils literal notranslate"><span class="pre">int</span></code>s. This argument
+controls stochastic frame skipping, as described in the section on
+stochasticity.</p>
+<p><code class="docutils literal notranslate"><span class="pre">repeat_action_probability</span></code>: <code class="docutils literal notranslate"><span class="pre">float</span></code>. The probability that an action
+sticks, as described in the section on stochasticity.</p>
+<p><code class="docutils literal notranslate"><span class="pre">full_action_space</span></code>: <code class="docutils literal notranslate"><span class="pre">bool</span></code>. If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, the action space
+consists of all legal actions on the console. Otherwise, the action
+space will be reduced to a subset.</p>
+<p><code class="docutils literal notranslate"><span class="pre">render_mode</span></code>: <code class="docutils literal notranslate"><span class="pre">str</span></code>. Specifies the rendering mode: - “human”: We’ll
+interactively display the screen and enable game sounds. This will lock
+emulation to the ROMs specified FPS - “rgb_array”: we’ll return the
+<code class="docutils literal notranslate"><span class="pre">rgb</span></code> key in step metadata with the current environment RGB frame. &gt;
+It is highly recommended to specify <code class="docutils literal notranslate"><span class="pre">render_mode</span></code> during construction
+instead of calling <code class="docutils literal notranslate"><span class="pre">env.render()</span></code>. &gt; This will guarantee proper
+scaling, audio support, and proper framerates</p>
+</section>
+<section id="version-history-and-naming-schemes">
+<h2>Version History and Naming Schemes<a class="headerlink" href="#version-history-and-naming-schemes" title="Permalink to this headline">#</a></h2>
+<p>All Atari games are available in three versions. They differ in the
+default settings of the arguments above. The differences are listed in
+the following table:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 26%"/>
+<col style="width: 30%"/>
+<col style="width: 30%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">frameskip=</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">repeat_actio</span>
+<span class="pre">n_probability=</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">full</span>
+<span class="pre">_action_space=</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>v0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">5,)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.25</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>v4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">5,)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>v5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.25</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<div><p>Version v5 follows the best practices outlined in <a class="reference external" href="#2">[2]</a>. Thus,
+it is recommended to transition to v5 and customize the environment
+using the arguments above, if necessary.</p>
+</div></blockquote>
+<p>For each Atari game, several different configurations are registered in
+OpenAI Gym. The naming schemes are analgous for v0 and v4. Let us take a
+look at all variations of Amidar-v0 that are registered with OpenAI gym:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 28%"/>
+<col style="width: 11%"/>
+<col style="width: 12%"/>
+<col style="width: 28%"/>
+<col style="width: 21%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>obs_type=</p></th>
+<th class="head"><p>frameskip=</p></th>
+<th class="head"><p>repeat_action_probability=</p></th>
+<th class="head"><p>full_action_space=</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Amidar-v0
+AmidarDeterministic-v0
+AmidarNoframeskip-v0
+Amidar-ram-v0
+Amidar-ramDeterministic-v0
+Amidar-ramNoframeskip-v0</p></td>
+<td><p>“rgb”
+“rgb”
+“rgb”
+“ram”
+“ram”
+“ram”</p></td>
+<td><p>(2, 5,)
+4
+1
+(2, 5,)
+4
+1</p></td>
+<td><p>0.25
+0.0
+0.25
+0.25
+0.0
+0.25</p></td>
+<td><p>False
+False
+False
+False
+False
+False</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>Things change in v5: The suffixes “Deterministic” and “NoFrameskip” are
+no longer available. Instead, you must specify the environment
+configuration via arguments passed to <code class="docutils literal notranslate"><span class="pre">gym.make</span></code>. Moreover, the v5
+environments are in the “ALE” namespace. The suffix “-ram” is still
+available. Thus, we get the following table:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 13%"/>
+<col style="width: 14%"/>
+<col style="width: 30%"/>
+<col style="width: 23%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>obs_type=</p></th>
+<th class="head"><p>frameskip=</p></th>
+<th class="head"><p>repeat_action_probability=</p></th>
+<th class="head"><p>full_action_space=</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ALE/Amidar-v5
+ALE/Amidar-ram-v5</p></td>
+<td><p>“rgb”
+“ram”</p></td>
+<td><p>5
+5</p></td>
+<td><p>0.25
+0.25</p></td>
+<td><p>True
+True</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="line-block">
+<div class="line">[1] MG Bellemare, Y Naddaf, J Veness, and M Bowling.</div>
+<div class="line">“The arcade learning environment: An evaluation platform for general
+agents.”</div>
+<div class="line">Journal of Artificial Intelligence Research (2012).</div>
+</div>
+<div class="line-block">
+<div class="line">[2] Machado et al.</div>
+<div class="line">“Revisiting the Arcade Learning Environment: Evaluation Protocols and
+Open Problems for General Agents”</div>
+<div class="line">Journal of Artificial Intelligence Research (2018)</div>
+<div class="line">URL: <a class="reference external" href="https://jair.org/index.php/jair/article/view/11182">https://jair.org/index.php/jair/article/view/11182</a></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -207,23 +949,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="breakout.html">
+          <a class="next-page" href="air_raid.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Breakout</div>
+                <div class="title">AirRaid</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../../usage.html">
+          <a class="prev-page" href="../../documentation/utils.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Vector</div>
+                <div class="title">gym.utils</div>
                 
               </div>
             </a>
@@ -231,7 +973,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, MG
+                Copyright &#169; 2022, Manuel Goulão
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -247,8 +989,34 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Atari</a><ul>
+<li><a class="reference internal" href="#action-space">Action Space</a></li>
+<li><a class="reference internal" href="#observation-space">Observation Space</a></li>
+<li><a class="reference internal" href="#rewards">Rewards</a></li>
+<li><a class="reference internal" href="#stochasticity">Stochasticity</a></li>
+<li><a class="reference internal" href="#flavors">Flavors</a></li>
+<li><a class="reference internal" href="#common-arguments">Common Arguments</a></li>
+<li><a class="reference internal" href="#version-history-and-naming-schemes">Version History and Naming Schemes</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
