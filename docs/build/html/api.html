@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Gym Test 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vector" href="usage.html" />
+    <link rel="prev" title="Welcome to Gym Test’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+            <a href="index.html" class="icon icon-home"> Gym Test
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Base</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-environments">Initializing Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interacting-with-the-environment">Interacting with the Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-methods">Standard methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stepping">Stepping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resetting">Resetting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-environment-api">Additional Environment API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spaces">Spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wrappers">Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#playing-within-an-environment">Playing within an environment</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Vector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Environments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="environments/atari/index.html">Atari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environments/atari/breakout.html">Breakout</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Gym Test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline"></a></h1>
+<section id="initializing-environments">
+<h2>Initializing Environments<a class="headerlink" href="#initializing-environments" title="Permalink to this headline"></a></h2>
+<p>Initializing environments is very easy in Gym and can be done via:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;CartPole-v0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="interacting-with-the-environment">
+<h2>Interacting with the Environment<a class="headerlink" href="#interacting-with-the-environment" title="Permalink to this headline"></a></h2>
+<p>Gym implements the classic “agent-environment loop”:</p>
+<html><p style="width:50%;margin-left:auto;margin-right:auto"></p></html><p>The agent performs some actions in the environment (usually by passing
+some control inputs to the environment, e.g. torque inputs of motors)
+and observes how the environment’s state changes. One such
+action-observation exchange is referred to as a <em>timestep</em>.</p>
+<p>The goal in RL is to manipulate the environment in some specific way.
+For instance, we want the agent to navigate a robot to a specific point
+in space. If it succeeds in doing this (or makes some progress towards
+that goal), it will receive a positive reward alongside the observation
+for this timestep. The reward may also be negative or 0, if the agent
+did not yet succeed (or did not make any progress). The agent will then
+be trained to maximize the reward it accumulates over many timesteps.</p>
+<p>After some timesteps, the environment may enter a terminal state. For
+instance, the robot may have crashed! In that case, we want to reset the
+environment to a new initial state. The environment issues a done signal
+to the agent if it enters such a terminal state. Not all done signals
+must be triggered by a “catastrophic failure”: Sometimes we also want to
+issue a done signal after a fixed number of timesteps, or if the agent
+has succeeded in completing some task in the environment.</p>
+<p>Let’s see what the agent-environment loop looks like in Gym. This
+example will run an instance of <code class="docutils literal notranslate"><span class="pre">LunarLander-v2</span></code> environment for 1000
+timesteps, rendering the environment at each step. You should see a
+window pop up rendering the environment</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;LunarLander-v2&quot;</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">observation</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">return_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+    <span class="n">observation</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+        <span class="n">observation</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">return_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The output should look something like this</p>
+<figure class="align-default" id="id1">
+<img alt="lunar_lander" src="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif" />
+<figcaption>
+<p><span class="caption-text">lunar_lander</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Every environment specifies the format of valid actions by providing an
+<code class="docutils literal notranslate"><span class="pre">env.action_space</span></code> attribute. Similarly, the format of valid
+observations is specified by <code class="docutils literal notranslate"><span class="pre">env.observation_space</span></code>. In the example
+above we sampled random actions via <code class="docutils literal notranslate"><span class="pre">env.action_space.sample()</span></code>. Note
+that we need to seed the action space separately from the environment to
+ensure reproducible samples.</p>
+</section>
+<section id="standard-methods">
+<h2>Standard methods<a class="headerlink" href="#standard-methods" title="Permalink to this headline"></a></h2>
+<section id="stepping">
+<h3>Stepping<a class="headerlink" href="#stepping" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">step(self,</span> <span class="pre">action:</span> <span class="pre">ActType)</span> <span class="pre">-&gt;</span> <span class="pre">Tuple[ObsType,</span> <span class="pre">float,</span> <span class="pre">bool,</span> <span class="pre">dict]</span></code></p>
+<p>Run one timestep of the environment’s dynamics. When end of episode is
+reached, you are responsible for calling <code class="docutils literal notranslate"><span class="pre">reset()</span></code> to reset this
+environment’s state. Accepts an action and returns a tuple
+<code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">reward,</span> <span class="pre">done,</span> <span class="pre">info)</span></code>.</p>
+<p><strong>Parameters</strong> - <code class="docutils literal notranslate"><span class="pre">action</span></code>(<strong>object</strong>): an action provided by the
+agent. This will oftentimes be a numpy array, but might also be an
+integer (for discrete action spaces) or a more complex object. This
+should be am element of the environment’s action space
+<code class="docutils literal notranslate"><span class="pre">self.action_space</span></code>.</p>
+<p><strong>Returns</strong></p>
+<p>This method returns a tuple <code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">reward,</span> <span class="pre">done,</span> <span class="pre">info)</span></code>: -
+<code class="docutils literal notranslate"><span class="pre">observation</span></code> (<strong>object</strong>): agent’s observation of the current
+environment. This will be an element of the environment’s observation
+space, <code class="docutils literal notranslate"><span class="pre">self.observation_space</span></code>. This may, for instance, be a numpy
+array containing the positions and velocities of certain objects. -
+<code class="docutils literal notranslate"><span class="pre">reward</span></code> (<strong>float</strong>) : amount of reward returned after previous action
+- <code class="docutils literal notranslate"><span class="pre">done</span></code> (<strong>bool</strong>): whether the episode has ended, in which case
+further <code class="docutils literal notranslate"><span class="pre">step()</span></code> calls will return undefined results. A done signal
+may be emitted for different reasons: Maybe the task underlying the
+environment was solved successfully, a certain timelimit was exceeded,
+or the physics simulation has entered an invalid state. <code class="docutils literal notranslate"><span class="pre">info</span></code> may
+contain additional information regarding the reason for a <code class="docutils literal notranslate"><span class="pre">done</span></code>
+signal. - <code class="docutils literal notranslate"><span class="pre">info</span></code> (<strong>dict</strong>): contains auxiliary diagnostic information
+(helpful for debugging, learning, and logging). This might, for
+instance, contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">metrics</span> <span class="n">that</span> <span class="n">describe</span> <span class="n">the</span> <span class="n">agent</span><span class="s1">&#39;s performance or</span>
+<span class="o">-</span> <span class="n">state</span> <span class="n">variables</span> <span class="n">that</span> <span class="n">are</span> <span class="n">hidden</span> <span class="kn">from</span> <span class="nn">observations</span> <span class="ow">or</span>
+<span class="o">-</span> <span class="n">information</span> <span class="n">that</span> <span class="n">distinguishes</span> <span class="n">truncation</span> <span class="ow">and</span> <span class="n">termination</span> <span class="ow">or</span>
+<span class="o">-</span> <span class="n">individual</span> <span class="n">reward</span> <span class="n">terms</span> <span class="n">that</span> <span class="n">are</span> <span class="n">combined</span> <span class="n">to</span> <span class="n">produce</span> <span class="n">the</span> <span class="n">total</span> <span class="n">reward</span>
+</pre></div>
+</div>
+</section>
+<section id="resetting">
+<h3>Resetting<a class="headerlink" href="#resetting" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">reset(self,</span> <span class="pre">*,</span> <span class="pre">seed:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">return_info:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">options:</span> <span class="pre">Optional[dict]</span> <span class="pre">=</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">ObsType</span> <span class="pre">|</span> <span class="pre">tuple[ObsType,</span> <span class="pre">dict]</span></code></p>
+<p>Resets the environment to an initial state and returns an initial
+observation. <strong>Parameters</strong> - <code class="docutils literal notranslate"><span class="pre">seed</span></code>(<strong>int</strong> or <strong>None</strong>): The seed
+that is used to initialize the environment’s PRNG. If the environment
+does not already have a PRNG and <code class="docutils literal notranslate"><span class="pre">seed=None</span></code>(the default option) is
+passed, a seed will be chosen from some source of entropy
+(e.g. timestamp or /dev/urandom). However, if the environment already
+has a PRNG and <code class="docutils literal notranslate"><span class="pre">seed=None</span></code> is pased, the PRNG will <em>not</em> be reset. If
+you pass an integer, the PRNG will be reset even if it already exists.
+Usually, you want to pass an integer <em>right after the environment has
+been initialized and then never again</em>. Please refer to the minimal
+example above to see this paradigm in action. -
+<code class="docutils literal notranslate"><span class="pre">return_info</span></code>(<strong>bool</strong>): If true, return additional information
+along with initial observation. This info should be analogous to the
+info returned in <code class="docutils literal notranslate"><span class="pre">step</span></code> - <code class="docutils literal notranslate"><span class="pre">options</span></code>(<strong>dict</strong> or <strong>None</strong>):
+Additional information to specify how the environment is reset
+(optional, depending on the specific environment)</p>
+<p><strong>Returns</strong></p>
+<p>This method will return an observation of the initial environment state.
+If <code class="docutils literal notranslate"><span class="pre">return_info=True</span></code> is passed, the method returns a tuple
+<code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">info)</span></code>, otherwise only <code class="docutils literal notranslate"><span class="pre">observation</span></code> will be
+returned. - <code class="docutils literal notranslate"><span class="pre">observation</span></code> (<strong>object</strong>): Observation of the initial
+state. This will be an element of <code class="docutils literal notranslate"><span class="pre">env.observation_space</span></code> (usually a
+numpy array) and is analogous to the observation returned by <code class="docutils literal notranslate"><span class="pre">step</span></code>. -
+<code class="docutils literal notranslate"><span class="pre">info</span></code> (<strong>dict</strong>): This will <em>only</em> be returned if
+<code class="docutils literal notranslate"><span class="pre">return_info=True</span></code> is passed. It contains auxiliary information
+complementing <code class="docutils literal notranslate"><span class="pre">observation</span></code>. This dictionary should be analogous to
+the <code class="docutils literal notranslate"><span class="pre">info</span></code> returned by <code class="docutils literal notranslate"><span class="pre">step</span></code>.</p>
+</section>
+<section id="rendering">
+<h3>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">render(self,</span> <span class="pre">mode:</span> <span class="pre">str=&quot;human&quot;)</span> <span class="pre">-&gt;</span> <span class="pre">Optional[np.ndarray</span> <span class="pre">|</span> <span class="pre">str]</span></code>
+<strong>Parameters</strong> - <code class="docutils literal notranslate"><span class="pre">mode</span></code>(<strong>str</strong>): This parameter specifies how the
+environment is rendered. The set of supported modes varies per
+environment (and some third-party environments may not support). By
+convention, if mode is: - “human”: render to the current display or
+terminal and return nothing. Usually for human consumption. -
+“rgb_array”: Return an np.ndarray with shape (height, width, 3),
+representing RGB values, suitable for turning into a video. - “ansi”:
+Return a string (str) or StringIO.StringIO containing a terminal-style
+text representation. The text can include newlines and ANSI escape
+sequences (e.g. for colors).</p>
+<p><strong>Returns</strong></p>
+<p>Depending on the <code class="docutils literal notranslate"><span class="pre">mode</span></code>, this method may return a representation of
+the environment as a <strong>str</strong> or <strong>ndarray</strong>. It may also return <strong>None</strong>
+e.g. if <code class="docutils literal notranslate"><span class="pre">mode=&quot;human&quot;</span></code></p>
+<p>Make sure that your class’s metadata ‘render.modes’ key includes the
+list of supported modes. It’s recommended to call super()
+implementations to use the functionality of this method.</p>
+</section>
+</section>
+<section id="additional-environment-api">
+<h2>Additional Environment API<a class="headerlink" href="#additional-environment-api" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">action_space</span></code>: this attribute gives the format of valid actions.
+It is of datatype <code class="docutils literal notranslate"><span class="pre">Space</span></code> provided by Gym. For example, if the
+action space is of type <code class="docutils literal notranslate"><span class="pre">Discrete</span></code> and gives the value
+<code class="docutils literal notranslate"><span class="pre">Discrete(2)</span></code>, this means there are two valid discrete actions: 0 &amp;
+1.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
+<span class="go">Discrete(2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span>
+<span class="go">Box(-3.4028234663852886e+38, 3.4028234663852886e+38, (4,), float32)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">observation_space</span></code>: this attribute gives the format of valid
+observations. It is of datatype <code class="docutils literal notranslate"><span class="pre">Space</span></code> provided by Gym. For
+example, if the observation space is of type <code class="docutils literal notranslate"><span class="pre">Box</span></code> and the shape of
+the object is <code class="docutils literal notranslate"><span class="pre">(4,)</span></code>, this denotes a valid observation will be an
+array of 4 numbers. We can check the box bounds as well with
+attributes.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span>
+<span class="go">array([4.8000002e+00, 3.4028235e+38, 4.1887903e-01, 3.4028235e+38], dtype=float32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">low</span>
+<span class="go">array([-4.8000002e+00, -3.4028235e+38, -4.1887903e-01, -3.4028235e+38], dtype=float32)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">reward_range</span></code>: returns a tuple corresponding to min and max
+possible rewards. Default range is set to <code class="docutils literal notranslate"><span class="pre">[-inf,+inf]</span></code>. You can
+set it if you want a narrower range .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">close()</span></code>: override close in your subclass to perform any necessary
+cleanup.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seed()</span></code>: sets the seed for this environment’s random number
+generator. This method is being deprecated in favor of passing the
+keyword argument <code class="docutils literal notranslate"><span class="pre">seed</span></code> to <code class="docutils literal notranslate"><span class="pre">reset</span></code>. Nonetheless, you will see
+this method being used heavily in older code.</p></li>
+</ul>
+</section>
+<section id="spaces">
+<h2>Spaces<a class="headerlink" href="#spaces" title="Permalink to this headline"></a></h2>
+<p>Spaces are usually used to specify the format of valid actions and
+observations. Every environment should have the attributes
+<code class="docutils literal notranslate"><span class="pre">action_space</span></code> and <code class="docutils literal notranslate"><span class="pre">observation_space</span></code>, both of which should be
+instances of classes that inherit from <code class="docutils literal notranslate"><span class="pre">Space</span></code>. There are multiple
+<code class="docutils literal notranslate"><span class="pre">Space</span></code> types available in Gym:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Box</span></code>: describes an n-dimensional continuous space. It’s a bounded
+space where we can define the upper and lower limits which describe
+the valid values our observations can take.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Discrete</span></code>: describes a discrete space where {0, 1, …, n-1} are the
+possible values our observation or action can take. Values can be
+shifted to {a, a+1, …, a+n-1} using an optional argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dict</span></code>: represents a dictionary of simple spaces.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tuple</span></code>: represents a tuple of simple spaces.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MultiBinary</span></code>: creates a n-shape binary space. Argument n can be a
+number or a <code class="docutils literal notranslate"><span class="pre">list</span></code> of numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MultiDiscrete</span></code>: consists of a series of <code class="docutils literal notranslate"><span class="pre">Discrete</span></code> action spaces
+with a different number of actions in each element.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gym.spaces</span> <span class="kn">import</span> <span class="n">Box</span><span class="p">,</span> <span class="n">Discrete</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">MultiBinary</span><span class="p">,</span> <span class="n">MultiDiscrete</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">[ 1.6952509 -0.4399011 -0.7981693]</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">start</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">-2</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">({</span><span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;velocity&quot;</span><span class="p">:</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">3</span><span class="p">)})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">OrderedDict([(&#39;position&#39;, 0), (&#39;velocity&#39;, 1)])</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">((</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Discrete</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">(1, 2)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">MultiBinary</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">[1 1 1 0 1]</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span> <span class="o">=</span> <span class="n">MultiDiscrete</span><span class="p">([</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="go">[3 0 0]</span>
+</pre></div>
+</div>
+</section>
+<section id="wrappers">
+<h2>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline"></a></h2>
+<p>Wrappers are a convenient way to modify an existing environment without
+having to alter the underlying code directly. Using wrappers will allow
+you to avoid a lot of boilerplate code and make your environment more
+modular. Wrappers can also chained to combine their effects. Most
+environments that are generated via <code class="docutils literal notranslate"><span class="pre">gym.make</span></code> will already be wrapped
+by default.</p>
+<p>In order to wrap an environment, you must first initialize a base
+environment. Then you can pass this environment along with (possibly
+optional) parameters to the wrapper’s constructor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gym.wrappers</span> <span class="kn">import</span> <span class="n">RescaleAction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;BipedalWalker-v3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span><span class="o">.</span><span class="n">action_space</span>
+<span class="go">Box([-1. -1. -1. -1.], [1. 1. 1. 1.], (4,), float32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span> <span class="o">=</span> <span class="n">RescaleAction</span><span class="p">(</span><span class="n">base_env</span><span class="p">,</span> <span class="n">min_action</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_action</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">action_space</span>
+<span class="go">Box([0. 0. 0. 0.], [1. 1. 1. 1.], (4,), float32)</span>
+</pre></div>
+</div>
+<p>There are three very common things you might want a wrapper to do:</p>
+<ul class="simple">
+<li><p>Transform actions before applying them to the base environment</p></li>
+<li><p>Transform observations that are returned by the base environment</p></li>
+<li><p>Transform rewards that are returned by the base environment</p></li>
+</ul>
+<p>Such wrappers can be easily implemented by inheriting from
+<code class="docutils literal notranslate"><span class="pre">ActionWrapper</span></code>, <code class="docutils literal notranslate"><span class="pre">ObservationWrapper</span></code>, or <code class="docutils literal notranslate"><span class="pre">RewardWrapper</span></code> and
+implementing the respective transformation.</p>
+<p>However, sometimes you might need to implement a wrapper that does some
+more complicated modifications (e.g. modify the reward based on data in
+<code class="docutils literal notranslate"><span class="pre">info</span></code>). Such wrappers can be implemented by inheriting from
+<code class="docutils literal notranslate"><span class="pre">Wrapper</span></code>. Gym already provides many commonly used wrappers for you.
+Some examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TimeLimit</span></code>: Issue a done signal if a maximum number of timesteps
+has been exceeded (or the base environment has issued a done signal).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ClipAction</span></code>: Clip the action such that it lies in the action space
+(of type Box).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RescaleAction</span></code>: Rescale actions to lie in a specified interval</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TimeAwareObservation</span></code>: Add information about the index of timestep
+to observation. In some cases helpful to ensure that transitions are
+Markov.</p></li>
+</ul>
+<p>If you have a wrapped environment, and you want to get the unwrapped
+environment underneath all of the layers of wrappers (so that you can
+manually call a function or change some underlying aspect of the
+environment), you can use the <code class="docutils literal notranslate"><span class="pre">.unwrapped</span></code> attribute. If the
+environment is already a base environment, the <code class="docutils literal notranslate"><span class="pre">.unwrapped</span></code> attribute
+will just return itself.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span>
+<span class="go">&lt;RescaleAction&lt;TimeLimit&lt;BipedalWalker&lt;BipedalWalker-v3&gt;&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">unwrapped</span>
+<span class="go">&lt;gym.envs.box2d.bipedal_walker.BipedalWalker object at 0x7f87d70712d0&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="playing-within-an-environment">
+<h2>Playing within an environment<a class="headerlink" href="#playing-within-an-environment" title="Permalink to this headline"></a></h2>
+<p>You can also play the environment using your keyboard using the <code class="docutils literal notranslate"><span class="pre">play</span></code>
+function in <code class="docutils literal notranslate"><span class="pre">gym.utils.play</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gym.utils.play</span> <span class="kn">import</span> <span class="n">play</span>
+<span class="n">play</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;Pong-v0&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This opens a window of the environment and allows you to control the
+agent using your keyboard.</p>
+<p>Playing using the keyboard requires a key-action map. This map should be
+a <code class="docutils literal notranslate"><span class="pre">dict:</span> <span class="pre">tuple(int)</span> <span class="pre">-&gt;</span> <span class="pre">int</span> <span class="pre">or</span> <span class="pre">None</span></code>, which maps the keys pressed to
+action performed. For example, if pressing the keys <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">space</span></code>
+at the same time is supposed to perform action <code class="docutils literal notranslate"><span class="pre">2</span></code>, then the
+<code class="docutils literal notranslate"><span class="pre">key_to_action</span></code> dict should look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="c1"># ...</span>
+    <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)):</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As a more complete example, let’s say we wish to play with
+<code class="docutils literal notranslate"><span class="pre">CartPole-v0</span></code> using our left and right arrow keys. The code would be
+as follow:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">from</span> <span class="nn">gym.utils.play</span> <span class="kn">import</span> <span class="n">play</span>
+<span class="n">mapping</span> <span class="o">=</span> <span class="p">{(</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">,):</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">,):</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">play</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v0&quot;</span><span class="p">),</span> <span class="n">keys_to_action</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where we obtain the corresponding key ID constants from pygame. If the
+<code class="docutils literal notranslate"><span class="pre">key_to_action</span></code> argument is not specified, then the default
+<code class="docutils literal notranslate"><span class="pre">key_to_action</span></code> mapping for that env is used, if provided.</p>
+<p>Furthermore, you wish to plot real time statistics as you play, you can
+use <code class="docutils literal notranslate"><span class="pre">gym.utils.play.PlayPlot</span></code>. Here’s some sample code for plotting
+the reward for last 5 second of gameplay:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">obs_t</span><span class="p">,</span> <span class="n">obs_tp1</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">rew</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">rew</span><span class="p">,]</span>
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">PlayPlot</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;reward&quot;</span><span class="p">])</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Pong-v0&quot;</span><span class="p">)</span>
+<span class="n">play</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">callback</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Gym Test’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Vector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, MG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
