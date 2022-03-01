@@ -1,5 +1,3 @@
-.. _atari-breakout:
-
 Breakout
 ========
 
@@ -69,15 +67,25 @@ flavors of the environment via the keyword arguments ``difficulty`` and
 ``mode``. A flavor is a combination of a game mode and a difficulty
 setting.
 
-+-------------+------------------+------------------+--------------+
-| Environment | Valid Modes      | Valid            | Default Mode |
-|             |                  | Difficulties     |              |
-+=============+==================+==================+==============+
-| Breakout    | `                | ``[0, 1]``       | ``0``        |
-|             | `[0, 4, 8, 12, 1 |                  |              |
-|             | 6, 20, 24, 28, 3 |                  |              |
-|             | 2, 36, 40, 44]`` |                  |              |
-+-------------+------------------+------------------+--------------+
++----+------------------------------------------------------+-----+---+
+| E  | Valid Modes                                          | Va  | D |
+| nv |                                                      | lid | e |
+| ir |                                                      | Dif | f |
+| on |                                                      | fic | a |
+| me |                                                      | ult | u |
+| nt |                                                      | ies | l |
+|    |                                                      |     | t |
+|    |                                                      |     | M |
+|    |                                                      |     | o |
+|    |                                                      |     | d |
+|    |                                                      |     | e |
++====+======================================================+=====+===+
+| Br | ``[0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44]``    | `   | ` |
+| ea |                                                      | `[0 | ` |
+| ko |                                                      | , 1 | 0 |
+| ut |                                                      | ]`` | ` |
+|    |                                                      |     | ` |
++----+------------------------------------------------------+-----+---+
 
 You may use the suffix “-ram” to switch to the RAM observation space. In
 v0 and v4, the suffixes “Deterministic” and “NoFrameskip” are available.
