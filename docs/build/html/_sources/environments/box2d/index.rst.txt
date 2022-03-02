@@ -8,6 +8,8 @@ Box2D
   car_racing
   lunar_lander
   
+.. raw:: html
+   :file: index.html
 
 These environments all involve toy games based around physics control,
 using `box2d <https://box2d.org/>`__ based physics and PyGame based

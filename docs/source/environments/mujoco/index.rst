@@ -15,6 +15,8 @@ MuJoCo
   swimmer
   walker2d
 
+.. raw:: html
+   :file: index.html
 
 MuJoCo stands for Multi-Joint dynamics with Contact. It is a physics
 engine for faciliatating research and development in robotics,

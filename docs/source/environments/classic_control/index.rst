@@ -10,6 +10,8 @@ Classic Control
   mountain_car
   pendulum
 
+.. raw:: html
+   :file: index.html
 
 The unique dependencies for this set of environments can be installed
 via:

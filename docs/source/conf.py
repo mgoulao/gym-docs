@@ -33,7 +33,8 @@ release = gym_version
 extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.doctest',
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'sphinx.ext.githubpages' 
 ]
 
 # Add any paths that contain templates here, relative to this directory.
