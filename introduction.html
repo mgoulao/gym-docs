@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Tutorials" href="tutorials/index.html" /><link rel="prev" title="Gym’s documentation" href="index.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
+    <link rel="shortcut icon" href="_static/favicon.png"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
         <title>Introduction - Gym 0.21.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=3c656993158f05539f962c5cea52a5e6c184bb8c" />
@@ -162,7 +162,8 @@
 <li class="toctree-l1"><a class="reference internal" href="vector/index.html">Vector API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spaces/index.html">Spaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wrappers/index_in_progress.html">Wrappers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment_creation/index.html">How to create new environments for Gym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_creation/index.html">Environment creation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/openai/gym">Github</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
@@ -363,11 +364,8 @@ window pop up rendering the environment</p>
 </pre></div>
 </div>
 <p>The output should look something like this</p>
-<figure class="align-default" id="id1">
-<img alt="lunar_lander" src="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif"/>
-<figcaption>
-<p><span class="caption-text">lunar_lander</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
+<figure class="align-default">
+<img alt="Lunar Lander" src="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif"/>
 </figure>
 <p>Every environment specifies the format of valid actions by providing an
 <code class="docutils literal notranslate"><span class="pre">env.action_space</span></code> attribute. Similarly, the format of valid

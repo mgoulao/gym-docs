@@ -66,9 +66,7 @@ window pop up rendering the environment
 The output should look something like this
 
 .. figure:: https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif
-   :alt: lunar_lander
-
-   lunar_lander
+   :alt: Lunar Lander
 
 Every environment specifies the format of valid actions by providing an
 ``env.action_space`` attribute. Similarly, the format of valid
