@@ -8,6 +8,9 @@ Toy Text
   taxi
   frozen_lake
 
+.. raw:: html
+   :file: index.html
+
 All toy text environments were created by us using native Python
 libraries such as StringIO.
 
