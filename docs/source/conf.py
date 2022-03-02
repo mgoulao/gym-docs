@@ -69,6 +69,7 @@ napoleon_attr_annotations = True
 #
 html_theme = "furo"
 
+html_favicon = '_static/img/favicon.png'
 html_theme_options = {
     "light_logo": "img/gym_logo_black.svg",
     "dark_logo": "img/gym_logo_white.svg",

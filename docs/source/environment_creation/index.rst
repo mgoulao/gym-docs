@@ -1,5 +1,5 @@
-How to create new environments for Gym
-======================================
+Environment creation
+====================
 
 This documentation overviews creating new environments and relevant
 useful wrappers, utilities and tests included in OpenAI Gym designed for

@@ -1,13 +1,35 @@
+:hide-toc:
+
 Gym's documentation
 ====================================
 
+=====================================================================================================
 Gym is a standard API for reinforcement learning, and a diverse collection of reference environments.
+=====================================================================================================
 
-**The Gym interface is simple, pythonic, and capable of representing general RL problems:**
+.. figure:: https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif
+   :alt: Lunar Lander
 
++---------------------------------------------------------------------------------------------+
+| **The Gym interface is simple, pythonic, and capable of representing general RL problems:** |
++---------------------------------------------------------------------------------------------+
+
+.. code-block:: python
+
+   import gym
+   env = gym.make("LunarLander-v2")
+   observation, info = env.reset(seed=42, return_info=True)
+   for _ in range(1000):
+      env.render()
+      action = policy(observation)
+      observation, reward, done, info = env.step(action)
+
+      if done:
+         observation, info = env.reset(return_info=True)
+   env.close()
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
    :caption: Base
 
    introduction
@@ -16,10 +38,11 @@ Gym is a standard API for reinforcement learning, and a diverse collection of re
    spaces/index
    wrappers/index_in_progress
    environment_creation/index
+   Github <https://github.com/openai/gym>
 
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
    :caption: Documentation
 
    documentation/core
@@ -30,7 +53,7 @@ Gym is a standard API for reinforcement learning, and a diverse collection of re
 
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
    :caption: Environments
 
    environments/atari/index
@@ -40,9 +63,3 @@ Gym is a standard API for reinforcement learning, and a diverse collection of re
    environments/box2d/index
    environments/third_party_environments/index
 
-
-
-Indices and tables
-==================
-
-* :ref:`search`

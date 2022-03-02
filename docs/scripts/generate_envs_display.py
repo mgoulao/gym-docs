@@ -7,6 +7,10 @@ all_envs = [
                  'inverted_double_pendulum', 'inverted_pendulum', 'reacher', 'swimmer', 'walker2d']
     },
     {
+        'id': 'toy_text',
+        'list': ['blackjack', 'frozen_lake']
+    },
+    {
         'id': 'box2d',
         'list': ['bipedal_walker', 'car_racing', 'lunar_lander']
     },
