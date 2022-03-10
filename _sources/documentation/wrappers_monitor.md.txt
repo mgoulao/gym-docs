@@ -1,0 +1,6 @@
+# wrappers.monitor
+
+```{eval-rst}
+.. automodule:: gym.monitor
+  :members:
+``` 
