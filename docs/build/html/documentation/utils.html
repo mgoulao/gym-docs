@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Atari" href="../environments/atari/index.html" /><link rel="prev" title="wrappers.monitor" href="wrappers_monitor.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Atari" href="../environments/atari/index.html" /><link rel="prev" title="gym.wrappers" href="wrappers.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
         <title>gym.utils - Gym 0.21.0 documentation</title>
@@ -157,12 +157,13 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Base</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../vector/index.html">Vector API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../spaces/index.html">Spaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../wrappers/index_in_progress.html">Wrappers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environment_creation/index.html">How to create new environments for Gym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/environment_creation.html">How to create new environments for Gym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/spaces.html">Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/vector_api.html">Vector API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/wrappers.html">Wrappers</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/openai/gym">Github</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
@@ -172,8 +173,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spaces.html">gym.spaces</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="wrappers.html">gym.wrappers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="wrappers_monitor.html">wrappers.monitor</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="wrappers.html">gym.wrappers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">gym.utils</a></li>
@@ -181,98 +181,494 @@
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environments/atari/index.html">Atari</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/air_raid.html">AirRaid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html">Alien</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html">Amidar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html">Assault</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html">Asterix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html">Asteroids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html">Atlantis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html">Bank Heist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html">Battle Zone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html">Beam Rider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html">Berzerk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html">Bowling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html">Boxing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html">Breakout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html">Carnival</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html">Centipede</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html">ChopperCommand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html">Crazy Climber</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html">Demon Attack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html">Double Dunk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html">Elevator Action</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html">Enduro</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html">FishingDerby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html">Freeway</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html">Frostbite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html">Gopher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html">Gravitar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html">Ice Hockey</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html">James Bond</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html">JourneyEscape</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html">Kangaroo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html">Krull</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html">KungFuMaster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html">MontezumaRevenge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html">MsPacman</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html">NameThisGame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html">Phoenix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html">Pitfall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html">Pong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html">Pooyan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html">PrivateEye</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html">Qbert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html">Riverraid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html">RoadRunner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html">Robotank</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html">Seaquest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html">Skiing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html">Solaris</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html">SpaceInvaders</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html">StarGunner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html">Tennis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html">TimePilot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html">Tutankham</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html">UpNDown</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html">Venture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/video_pinball.html">VideoPinball</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/wizard_of_wor.html">WizardOfWor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/yars_revenge.html">YarsRevenge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/zaxxon.html">Zaxxon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/air_raid.html">Air Raid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/berzerk.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/bowling.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/boxing.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/elevator_action.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/enduro.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/fishing_derby.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/freeway.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/pooyan.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html#version-history">Version History</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environments/mujoco/index.html">MuJoCo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html">Ant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html">HalfCheetah</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html">Hopper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html">HumanoidStandup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html">Humanoid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html">InvertedDoublePendulum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html">InvertedPendulum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html">Reacher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html">Swimmer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html">Walker2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#version-history">Version History</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environments/toy_text/index.html">Toy Text</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html">Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html">Taxi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html">Frozen lake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#rendering">Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#version-history">Version History</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environments/classic_control/index.html">Classic Control</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html">Acrobot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html">CartPole</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html">MountainCarContinuous</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car.html">MountainCar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html">Pendulum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html#reward">Reward</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car.html">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html#version-history">Version History</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environments/box2d/index.html">Box2D</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html">BipedalWalker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html">Car racing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html">LunarLander</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#credits">Credits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../environments/third_party_environments/index.html">Third Party Environments</a></li>
@@ -310,7 +706,8 @@
         <article role="main">
           <section id="gym-utils">
 <h1>gym.utils<a class="headerlink" href="#gym-utils" title="Permalink to this headline">#</a></h1>
-<span class="target" id="module-gym.utils"></span><p>A set of common utilities used within the environments. These are
+<p>.. py:module:: gym.utils</p>
+<p>A set of common utilities used within the environments. These are
 not intended as API functions, and will not remain stable over time.</p>
 </section>
 
@@ -328,14 +725,14 @@ not intended as API functions, and will not remain stable over time.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="wrappers_monitor.html">
+          <a class="prev-page" href="wrappers.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">wrappers.monitor</div>
+                <div class="title">gym.wrappers</div>
                 
               </div>
             </a>

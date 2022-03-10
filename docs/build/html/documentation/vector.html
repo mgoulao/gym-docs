@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="vector.utils" href="vector_utils.html" /><link rel="prev" title="gym.core" href="core.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="gym.spaces" href="spaces.html" /><link rel="prev" title="Wrappers" href="../content/wrappers.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.4.0, furo 2022.02.23"/>
         <title>gym.vector - Gym 0.21.0 documentation</title>
@@ -157,37 +157,30 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Base</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../vector/index.html">Vector API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../spaces/index.html">Spaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../wrappers/index_in_progress.html">Wrappers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environment_creation/index.html">How to create new environments for Gym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/environment_creation.html">Environment Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/spaces.html">Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/vector_api.html">Vector API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/wrappers.html">Wrappers</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/openai/gym">Github</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="core.html">gym.core</a></li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">gym.vector</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="vector_utils.html">vector.utils</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">gym.vector</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spaces.html">gym.spaces</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="wrappers.html">gym.wrappers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="wrappers_monitor.html">wrappers.monitor</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">gym.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrappers.html">gym.wrappers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/atari/index.html">Atari</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/air_raid.html">AirRaid</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/atari/index.html">Atari</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/air_raid.html">Air Raid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/alien.html">Alien</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/amidar.html">Amidar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/assault.html">Assault</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/asterix.html">Asterix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/asteroids.html">Asteroids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html">Atlantis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/atlantis.html">Asteroids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/bank_heist.html">Bank Heist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/battle_zone.html">Battle Zone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/beam_rider.html">Beam Rider</a></li>
@@ -197,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/breakout.html">Breakout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/carnival.html">Carnival</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/centipede.html">Centipede</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html">ChopperCommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/chopper_command.html">Chopper Command</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/crazy_climber.html">Crazy Climber</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/demon_attack.html">Demon Attack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/double_dunk.html">Double Dunk</a></li>
@@ -208,15 +201,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/frostbite.html">Frostbite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/gopher.html">Gopher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/gravitar.html">Gravitar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html">Ice Hockey</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html">James Bond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ice_hockey.html">IceHockey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/jamesbond.html">Jamesbond</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/journey_escape.html">JourneyEscape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/kangaroo.html">Kangaroo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/krull.html">Krull</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html">KungFuMaster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html">MontezumaRevenge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html">MsPacman</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html">NameThisGame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/kung_fu_master.html">Kung Fu Master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/montezuma_revenge.html">Montezuma Revenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/ms_pacman.html">Ms Pacman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/name_this_game.html">Name This Game</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/phoenix.html">Phoenix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/pitfall.html">Pitfall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/pong.html">Pong</a></li>
@@ -224,55 +217,165 @@
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/private_eye.html">PrivateEye</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/qbert.html">Qbert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/riverraid.html">Riverraid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html">RoadRunner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html">Robotank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/road_runner.html">Road Runner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/robotank.html">Robot Tank</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/seaquest.html">Seaquest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html">Skiing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/skiing.html">Skiings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/solaris.html">Solaris</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/space_invaders.html">SpaceInvaders</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/star_gunner.html">StarGunner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/tennis.html">Tennis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/time_pilot.html">TimePilot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/tutankham.html">Tutankham</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html">UpNDown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/up_n_down.html">Up n’ Down</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/venture.html">Venture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/video_pinball.html">VideoPinball</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/wizard_of_wor.html">WizardOfWor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/atari/yars_revenge.html">YarsRevenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/video_pinball.html">Video Pinball</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/atari/wizard_of_wor.html">Wizard of Wor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/atari/zaxxon.html">Zaxxon</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/mujoco/index.html">MuJoCo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html">Ant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html">HalfCheetah</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html">Hopper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html">HumanoidStandup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html">Humanoid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html">InvertedDoublePendulum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html">InvertedPendulum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html">Reacher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html">Swimmer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html">Walker2d</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/mujoco/index.html">MuJoCo</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/ant.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/half_cheetah.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/hopper.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid_standup.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/humanoid.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_double_pendulum.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/inverted_pendulum.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/reacher.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/swimmer.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/mujoco/walker2d.html#version-history">Version History</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/toy_text/index.html">Toy Text</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html">Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html">Taxi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html">Frozen lake</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/toy_text/index.html">Toy Text</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/blackjack.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#observations">Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#rendering">Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/taxi.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/toy_text/frozen_lake.html#version-history">Version History</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/classic_control/index.html">Classic Control</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/classic_control/index.html">Classic Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/acrobot.html">Acrobot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html">CartPole</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html">MountainCarContinuous</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car.html">MountainCar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/cart_pole.html">Cart Pole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car_continuous.html">Mountain Car Continuous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/mountain_car.html">Mountain Car</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../environments/classic_control/pendulum.html">Pendulum</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/box2d/index.html">Box2D</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html">BipedalWalker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html">Car racing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html">LunarLander</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/box2d/index.html">Box2D</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/bipedal_walker.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/car_racing.html#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#rewards">Rewards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#starting-state">Starting State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/box2d/lunar_lander.html#credits">Credits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../environments/third_party_environments/index.html">Third Party Environments</a></li>
@@ -308,11 +411,9 @@
           </label>
         </div>
         <article role="main">
-          <section id="gym-vector">
-<h1>gym.vector<a class="headerlink" href="#gym-vector" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-<span class="target" id="module-gym.vector"></span><dl class="py class">
+          <section id="module-gym.vector">
+<span id="gym-vector"></span><h1>gym.vector<a class="headerlink" href="#module-gym.vector" title="Permalink to this headline">#</a></h1>
+<dl class="py class">
 <dt class="sig sig-object py" id="gym.vector.AsyncVectorEnv">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gym.vector.</span></span><span class="sig-name descname"><span class="pre">AsyncVectorEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_fns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observation_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daemon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.vector.AsyncVectorEnv" title="Permalink to this definition">#</a></dt>
 <dd><p>Vectorized environment that runs multiple environments in parallel. It
@@ -645,23 +746,23 @@ environment during creation.</p></li>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="vector_utils.html">
+          <a class="next-page" href="spaces.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">vector.utils</div>
+                <div class="title">gym.spaces</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="core.html">
+          <a class="prev-page" href="../content/wrappers.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">gym.core</div>
+                <div class="title">Wrappers</div>
                 
               </div>
             </a>
