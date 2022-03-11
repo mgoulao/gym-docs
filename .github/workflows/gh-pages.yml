@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-python@v2
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt
+        run: pip install -r docs/requirements.txt && pip install gym
       
       - name: Install dependencies
         run: sphinx-build -b dirhtml -v docs/source build
