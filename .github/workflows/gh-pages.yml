@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r docs/requirements.txt && pip install gym
       
-      - name: Install dependencies
+      - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
 
       - name: Upload to GitHub Pages
