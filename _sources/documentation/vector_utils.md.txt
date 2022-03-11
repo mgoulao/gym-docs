@@ -1,7 +1,0 @@
-# vector.utils
-
-
-```{eval-rst}
-.. automodule:: gym.vector.utils
-  :members:
-``` 
