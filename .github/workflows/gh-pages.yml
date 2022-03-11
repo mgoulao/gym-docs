@@ -15,10 +15,10 @@ jobs:
         run: pip install -r docs/requirements.txt
       
       - name: Install dependencies
-        run: sphinx-build -b dirhtml -v docs/ build/docs
+        run: sphinx-build -b dirhtml -v docs/source build
 
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/docs/
+          publish_dir: ./build/
