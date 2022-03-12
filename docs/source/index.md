@@ -61,3 +61,12 @@ environments/classic_control/index
 environments/box2d/index
 environments/third_party_environments/index
 ```
+
+```{toctree}
+:hidden:
+:caption: Development
+
+development/changelog
+Contribute to the Docs <https://github.com/Farama-Foundation/gym-docs>
+
+```
