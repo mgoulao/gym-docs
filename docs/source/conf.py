@@ -86,5 +86,5 @@ html_css_files = [
     'css/custom.css',
 ]
 
-sphinx_github_changelog_token = os.environ.get("secrets.GITHUB_TOKEN")
+sphinx_github_changelog_token = os.environ.get("SPHINX_GITHUB_CHANGELOG_TOKEN")
 print(sphinx_github_changelog_token)
