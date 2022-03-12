@@ -10,7 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -85,3 +85,5 @@ html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
 ]
+
+changelog_github_token = os.environ.get("SPHINX_GITHUB_CHANGELOG_TOKEN")
