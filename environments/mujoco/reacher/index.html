@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Description" href="../swimmer/" /><link rel="prev" title="Description" href="../inverted_pendulum/" />
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Swimmer" href="../swimmer/" /><link rel="prev" title="Inverted Pendulum" href="../inverted_pendulum/" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Description - Gym 0.23.0 documentation</title>
+        <title>Reacher - Gym 0.23.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -182,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../atari/assault/">Assault</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../atari/asterix/">Asterix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../atari/asteroids/">Asteroids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../atari/atlantis/">Asteroids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../atari/atlantis/">Atlantis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../atari/bank_heist/">Bank Heist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../atari/battle_zone/">Battle Zone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../atari/beam_rider/">Beam Rider</a></li>
@@ -237,108 +237,22 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../">MuJoCo</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../ant/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ant/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hopper/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../humanoid/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/#version-history">Version History</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#notes">Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../swimmer/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../walker2d/#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ant/">Ant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../half_cheetah/">Half Cheetah</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hopper/">Hopper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humanoid_standup/">Humanoid Standup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../humanoid/">Humanoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inverted_double_pendulum/">Inverted Double Pendulum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inverted_pendulum/">Inverted Pendulum</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Reacher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swimmer/">Swimmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../walker2d/">Walker2D</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../toy_text/">Toy Text</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/#actions">Actions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/#observations">Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/#rendering">Rendering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/frozen_lake/">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/frozen_lake/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/frozen_lake/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/frozen_lake/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../toy_text/frozen_lake/#version-history">Version History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toy_text/blackjack/">Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toy_text/taxi/">Taxi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../toy_text/frozen_lake/">Frozen Lake</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../classic_control/">Classic Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -350,34 +264,9 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../box2d/">Box2D</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/#credits">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#references">References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/#credits">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#action-space">Action Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#observation-space">Observation Space</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#rewards">Rewards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#starting-state">Starting State</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#episode-termination">Episode Termination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#arguments">Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#version-history">Version History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/#credits">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../box2d/bipedal_walker/">Bipedal Walker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../box2d/car_racing/">Car Racing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../box2d/lunar_lander/">Lunar Lander</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../third_party_environments/">Third Party Environments</a></li>
@@ -418,13 +307,43 @@
           </label>
         </div>
         <article role="main">
-          <section id="description">
-<h1>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h1>
+          <section id="reacher">
+<h1>Reacher<a class="headerlink" href="#reacher" title="Permalink to this headline">#</a></h1>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/reacher.gif"><img alt="../../../_images/reacher.gif" src="../../../_images/reacher.gif" style="width: 200px;"/></a>
+</figure>
+<p>This environment is part of the <a href="..">Mujoco environments</a>. Please read that page first for general information.</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Action Space</p></td>
+<td><p>Box(-1.0, 1.0, (2,), float32)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Observation Shape</p></td>
+<td><p>(11,)</p></td>
+</tr>
+<tr class="row-even"><td><p>Observation High</p></td>
+<td><p>[inf inf inf inf inf inf inf inf inf inf inf]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Observation Low</p></td>
+<td><p>[-inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf]</p></td>
+</tr>
+<tr class="row-even"><td><p>Import</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gym.make("Reacher-v2")</span></code></p></td>
+</tr>
+</tbody>
+</table></div>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h2>
 <p>“Reacher” is a two-jointed robot arm. The goal is to move the robot’s end effector (called <em>fingertip</em>) close to a
 target that is spawned at a random position.</p>
 </section>
 <section id="action-space">
-<h1>Action Space<a class="headerlink" href="#action-space" title="Permalink to this headline">#</a></h1>
+<h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this headline">#</a></h2>
 <p>The action space is a <code class="docutils literal notranslate"><span class="pre">Box(-1,</span> <span class="pre">1,</span> <span class="pre">(2,),</span> <span class="pre">float32)</span></code>. An action <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b)</span></code> represents the torques applied at the hinge joints.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -458,7 +377,7 @@ target that is spawned at a random position.</p>
 </table></div>
 </section>
 <section id="observation-space">
-<h1>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this headline">#</a></h1>
+<h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this headline">#</a></h2>
 <p>Observations consist of</p>
 <ul class="simple">
 <li><p>The cosine of the angles of the two arms</p></li>
@@ -623,7 +542,7 @@ If one is to read the <code class="docutils literal notranslate"><span class="pr
 </table></div>
 </section>
 <section id="rewards">
-<h1>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">#</a></h1>
+<h2>Rewards<a class="headerlink" href="#rewards" title="Permalink to this headline">#</a></h2>
 <p>The reward consists of two parts:</p>
 <ul class="simple">
 <li><p><em>reward_distance</em>: This reward is a measure of how far the <em>fingertip</em>
@@ -641,7 +560,7 @@ However, <code class="docutils literal notranslate"><span class="pre">info</span
 you should create a wrapper that computes the weighted reward from <code class="docutils literal notranslate"><span class="pre">info</span></code>.</p>
 </section>
 <section id="starting-state">
-<h1>Starting State<a class="headerlink" href="#starting-state" title="Permalink to this headline">#</a></h1>
+<h2>Starting State<a class="headerlink" href="#starting-state" title="Permalink to this headline">#</a></h2>
 <p>All observations start in state
 (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
 with a noise added for stochasticity. A uniform noise in the range
@@ -653,7 +572,7 @@ element (“fingertip” - “target”) is calculated at the end once everythin
 is set. The default setting has a framerate of 2 and a <em>dt = 2 * 0.01 = 0.02</em></p>
 </section>
 <section id="episode-termination">
-<h1>Episode Termination<a class="headerlink" href="#episode-termination" title="Permalink to this headline">#</a></h1>
+<h2>Episode Termination<a class="headerlink" href="#episode-termination" title="Permalink to this headline">#</a></h2>
 <p>The episode terminates when any of the following happens:</p>
 <ol class="arabic simple">
 <li><p>The episode duration reaches a 50 timesteps (with a new random target popping up if the reacher’s fingertip reaches it before 50 timesteps)</p></li>
@@ -661,7 +580,7 @@ is set. The default setting has a framerate of 2 and a <em>dt = 2 * 0.01 = 0.02<
 </ol>
 </section>
 <section id="arguments">
-<h1>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">#</a></h1>
+<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">#</a></h2>
 <p>No additional arguments are currently supported (in v2 and lower),
 but modifications can be made to the XML file in the assets folder
 (or by changing the path to a modified XML file in another folder)..</p>
@@ -672,12 +591,13 @@ but modifications can be made to the XML file in the assets folder
 beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noise_scale etc.</p>
 </section>
 <section id="version-history">
-<h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">#</a></h1>
+<h2>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>v2: All continuous control environments now use mujoco_py &gt;= 1.50</p></li>
 <li><p>v1: max_time_steps raised to 1000 for robot based tasks (not including reacher, which has a max_time_steps of 50). Added reward_threshold to environments.</p></li>
 <li><p>v0: Initial versions release (1.0.0)</p></li>
 </ul>
+</section>
 </section>
 
         </article>
@@ -690,7 +610,7 @@ beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noise_scal
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Description</div>
+                <div class="title">Swimmer</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -701,7 +621,7 @@ beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noise_scal
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Description</div>
+                <div class="title">Inverted Pendulum</div>
                 
               </div>
             </a>
@@ -737,7 +657,8 @@ beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noise_scal
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Description</a></li>
+<li><a class="reference internal" href="#">Reacher</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#action-space">Action Space</a></li>
 <li><a class="reference internal" href="#observation-space">Observation Space</a></li>
 <li><a class="reference internal" href="#rewards">Rewards</a></li>
@@ -745,6 +666,8 @@ beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noise_scal
 <li><a class="reference internal" href="#episode-termination">Episode Termination</a></li>
 <li><a class="reference internal" href="#arguments">Arguments</a></li>
 <li><a class="reference internal" href="#version-history">Version History</a></li>
+</ul>
+</li>
 </ul>
 
           </div>
