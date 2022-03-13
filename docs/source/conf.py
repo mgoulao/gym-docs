@@ -76,7 +76,7 @@ html_theme_options = {
     "light_logo": "img/gym_logo_black.svg",
     "dark_logo": "img/gym_logo_white.svg",
 }
-
+html_baseurl = 'gym-docs'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
