@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="gym.vector" href="../../documentation/vector/" /><link rel="prev" title="Tutorials" href="../tutorials/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Atari" href="../../environments/atari/" /><link rel="prev" title="Tutorials" href="../tutorials/" />
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Wrappers - Gym 0.23.0 documentation</title>
+        <title>Wrappers - Gym 0.23.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../"><div class="brand">Gym 0.23.0 documentation</div></a>
+      <a href="../../"><div class="brand">Gym 0.23.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -149,7 +149,7 @@
     <img class="sidebar-logo only-dark" src="../../_static/img/gym_logo_white.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gym 0.23.0 documentation</span>
+  <span class="sidebar-brand-text">Gym 0.23.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -166,12 +166,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/">Tutorials</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Wrappers</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/openai/gym">Github</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../documentation/vector/">gym.vector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../documentation/spaces/">gym.spaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../documentation/wrappers/">gym.wrappers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
@@ -301,7 +295,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -309,7 +303,149 @@
         <article role="main">
           <section id="wrappers">
 <h1>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline">#</a></h1>
-<p>Wrapper info coming soon!</p>
+<p>Wrappers are a convenient way to modify an existing environment without having to alter the underlying code directly.
+Using wrappers will allow you to avoid a lot of boilerplate code and make your environment more modular. Wrappers can
+also be chained to combine their effects. Most environments that are generated via <code class="docutils literal notranslate"><span class="pre">gym.make</span></code> will already be wrapped by default.</p>
+<p>In order to wrap an environment, you must first initialize a base environment. Then you can pass this environment along
+with (possibly optional) parameters to the wrapper’s constructor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gym.wrappers</span> <span class="kn">import</span> <span class="n">RescaleAction</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"BipedalWalker-v3"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span><span class="o">.</span><span class="n">action_space</span>
+<span class="go">Box([-1. -1. -1. -1.], [1. 1. 1. 1.], (4,), float32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span> <span class="o">=</span> <span class="n">RescaleAction</span><span class="p">(</span><span class="n">base_env</span><span class="p">,</span> <span class="n">min_action</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_action</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">action_space</span>
+<span class="go">Box([0. 0. 0. 0.], [1. 1. 1. 1.], (4,), float32)</span>
+</pre></div>
+</div>
+<p>You can access the environment underneath the <strong>first</strong> wrapper by using
+the <code class="docutils literal notranslate"><span class="pre">.env</span></code> attribute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span>
+<span class="go">&lt;RescaleAction&lt;TimeLimit&lt;OrderEnforcing&lt;BipedalWalker&lt;BipedalWalker-v3&gt;&gt;&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">env</span>
+<span class="go">&lt;TimeLimit&lt;OrderEnforcing&lt;BipedalWalker&lt;BipedalWalker-v3&gt;&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>If you want to get to the environment underneath <strong>all</strong> of the layers of wrappers,
+you can use the <code class="docutils literal notranslate"><span class="pre">.unwrapped</span></code> attribute.
+If the environment is already a base environment, the <code class="docutils literal notranslate"><span class="pre">.unwrapped</span></code> attribute will just return itself.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span>
+<span class="go">&lt;RescaleAction&lt;TimeLimit&lt;OrderEnforcing&lt;BipedalWalker&lt;BipedalWalker-v3&gt;&gt;&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">unwrapped</span>
+<span class="go">&lt;gym.envs.box2d.bipedal_walker.BipedalWalker object at 0x7f87d70712d0&gt;</span>
+</pre></div>
+</div>
+<p>There are three common things you might want a wrapper to do:</p>
+<ul class="simple">
+<li><p>Transform actions before applying them to the base environment</p></li>
+<li><p>Transform observations that are returned by the base environment</p></li>
+<li><p>Transform rewards that are returned by the base environment</p></li>
+</ul>
+<p>Such wrappers can be easily implemented by inheriting from <code class="docutils literal notranslate"><span class="pre">ActionWrapper</span></code>, <code class="docutils literal notranslate"><span class="pre">ObservationWrapper</span></code>, or <code class="docutils literal notranslate"><span class="pre">RewardWrapper</span></code> and implementing the
+respective transformation. If you need a wrapper to do more complicated tasks, you can inherit from the <code class="docutils literal notranslate"><span class="pre">Wrapper</span></code> class directly.</p>
+<section id="actionwrapper">
+<h2>ActionWrapper<a class="headerlink" href="#actionwrapper" title="Permalink to this headline">#</a></h2>
+<p>If you would like to apply a function to the action before passing it to the base environment,
+you can simply inherit from <code class="docutils literal notranslate"><span class="pre">ActionWrapper</span></code> and overwrite the method <code class="docutils literal notranslate"><span class="pre">action</span></code> to implement that transformation.
+The transformation defined in that method must take values in the base environment’s action space.
+However, its domain might differ from the original action space. In that case, you need to specify the new
+action space of the wrapper by setting <code class="docutils literal notranslate"><span class="pre">self._action_space</span></code> in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of your wrapper.</p>
+<p>Let’s say you have an environment with action space of type <code class="docutils literal notranslate"><span class="pre">Box</span></code>, but you would
+only like to use a finite subset of actions. Then, you might want to implement the following wrapper</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiscreteActions</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">ActionWrapper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">disc_to_cont</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disc_to_cont</span> <span class="o">=</span> <span class="n">disc_to_cont</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_action_space</span> <span class="o">=</span> <span class="n">Discrete</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">disc_to_cont</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">act</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">disc_to_cont</span><span class="p">[</span><span class="n">act</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"LunarLanderContinuous-v2"</span><span class="p">)</span>
+    <span class="n">wrapped_env</span> <span class="o">=</span> <span class="n">DiscreteActions</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span>
+                                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">action_space</span><span class="p">)</span>         <span class="c1">#Discrete(4)</span>
+</pre></div>
+</div>
+<p>Among others, Gym provides the action wrappers <code class="docutils literal notranslate"><span class="pre">ClipAction</span></code> and <code class="docutils literal notranslate"><span class="pre">RescaleAction</span></code>.</p>
+</section>
+<section id="observationwrapper">
+<h2>ObservationWrapper<a class="headerlink" href="#observationwrapper" title="Permalink to this headline">#</a></h2>
+<p>If you would like to apply a function to the observation that is returned by the base environment before passing
+it to learning code, you can simply inherit from <code class="docutils literal notranslate"><span class="pre">ObservationWrapper</span></code> and overwrite the method <code class="docutils literal notranslate"><span class="pre">observation</span></code> to
+implement that transformation. The transformation defined in that method must be defined on the base environment’s
+observation space. However, it may take values in a different space. In that case, you need to specify the new
+observation space of the wrapper by setting <code class="docutils literal notranslate"><span class="pre">self._observation_space</span></code> in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of your wrapper.</p>
+<p>For example, you might have a 2D navigation task where the environment returns dictionaries as observations with keys <code class="docutils literal notranslate"><span class="pre">"agent_position"</span></code>
+and <code class="docutils literal notranslate"><span class="pre">"target_position"</span></code>. A common thing to do might be to throw away some degrees of freedom and only consider
+the position of the target relative to the agent, i.e. <code class="docutils literal notranslate"><span class="pre">observation["target_position"]</span> <span class="pre">-</span> <span class="pre">observation["agent_position"]</span></code>.
+For this, you could implement an observation wrapper like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RelativePosition</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">ObservationWrapper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_observation_space</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">observation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">[</span><span class="s2">"target_position"</span><span class="p">]</span> <span class="o">-</span> <span class="n">obs</span><span class="p">[</span><span class="s2">"agent_position"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Among others, Gym provides the observation wrapper <code class="docutils literal notranslate"><span class="pre">TimeAwareObservation</span></code>, which adds information about the index of the timestep
+to the observation.</p>
+</section>
+<section id="rewardwrapper">
+<h2>RewardWrapper<a class="headerlink" href="#rewardwrapper" title="Permalink to this headline">#</a></h2>
+<p>If you would like to apply a function to the reward that is returned by the base environment before passing
+it to learning code, you can simply inherit from <code class="docutils literal notranslate"><span class="pre">RewardWrapper</span></code> and overwrite the method <code class="docutils literal notranslate"><span class="pre">reward</span></code> to
+implement that transformation. This transformation might change the reward range; to specify the reward range of
+your wrapper, you can simply define <code class="docutils literal notranslate"><span class="pre">self._reward_range</span></code> in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+<p>Let us look at an example: Sometimes (especially when we do not have control over the reward because it is intrinsic), we want to clip the reward
+to a range to gain some numerical stability. To do that, we could, for instance, implement the following wrapper:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClipReward</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">RewardWrapper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">min_reward</span><span class="p">,</span> <span class="n">max_reward</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_reward</span> <span class="o">=</span> <span class="n">min_reward</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_reward</span> <span class="o">=</span> <span class="n">max_reward</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reward_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_reward</span><span class="p">,</span> <span class="n">max_reward</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">reward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reward</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">reward</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_reward</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_reward</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="general-wrappers">
+<h2>General Wrappers<a class="headerlink" href="#general-wrappers" title="Permalink to this headline">#</a></h2>
+<p>Sometimes you might need to implement a wrapper that does some more complicated modifications (e.g. modify the
+reward based on data in <code class="docutils literal notranslate"><span class="pre">info</span></code> or change the rendering behavior).
+Such wrappers can be implemented by inheriting from <code class="docutils literal notranslate"><span class="pre">Wrapper</span></code>.</p>
+<ul class="simple">
+<li><p>You can set a new action or observation space by defining <code class="docutils literal notranslate"><span class="pre">self._action_space</span></code> or <code class="docutils literal notranslate"><span class="pre">self._observation_space</span></code> in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, respectively</p></li>
+<li><p>You can set new metadata and reward range by defining <code class="docutils literal notranslate"><span class="pre">self._metadata</span></code> and <code class="docutils literal notranslate"><span class="pre">self._reward_range</span></code> in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, respectively</p></li>
+<li><p>You can override <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">render</span></code>, <code class="docutils literal notranslate"><span class="pre">close</span></code> etc. If you do this, you can access the environment that was passed
+to your wrapper (which <em>still</em> might be wrapped in some other wrapper) by accessing the attribute <code class="docutils literal notranslate"><span class="pre">self.env</span></code>.</p></li>
+</ul>
+<p>Let’s also take a look at an example for this case. Most MuJoCo environments return a reward that consists
+of different terms: For instance, there might be a term that rewards the agent for completing the task and one term that
+penalizes large actions (i.e. energy usage). Usually, you can pass weight parameters for those terms during
+initialization of the environment. However, <em>Reacher</em> does not allow you to do this! Nevertheless, all individual terms
+of the reward are returned in <code class="docutils literal notranslate"><span class="pre">info</span></code>, so let us build a wrapper for Reacher that allows us to weight those terms:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ReacherRewardWrapper</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Wrapper</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">reward_dist_weight</span><span class="p">,</span> <span class="n">reward_ctrl_weight</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reward_dist_weight</span> <span class="o">=</span> <span class="n">reward_dist_weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reward_ctrl_weight</span> <span class="o">=</span> <span class="n">reward_ctrl_weight</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_dist_weight</span><span class="o">*</span><span class="n">info</span><span class="p">[</span><span class="s2">"reward_dist"</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_ctrl_weight</span><span class="o">*</span><span class="n">info</span><span class="p">[</span><span class="s2">"reward_ctrl"</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is <em>not</em> sufficient to use a <code class="docutils literal notranslate"><span class="pre">RewardWrapper</span></code> in this case!</p>
+</div>
+</section>
 </section>
 
         </article>
@@ -317,12 +453,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../documentation/vector/">
+          <a class="next-page" href="../../environments/atari/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">gym.vector</div>
+                <div class="title">Atari</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -357,8 +493,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Wrappers</a><ul>
+<li><a class="reference internal" href="#actionwrapper">ActionWrapper</a></li>
+<li><a class="reference internal" href="#observationwrapper">ObservationWrapper</a></li>
+<li><a class="reference internal" href="#rewardwrapper">RewardWrapper</a></li>
+<li><a class="reference internal" href="#general-wrappers">General Wrappers</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

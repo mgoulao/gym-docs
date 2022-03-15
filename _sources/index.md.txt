@@ -43,15 +43,6 @@ Github <https://github.com/openai/gym>
 
 ```{toctree}
 :hidden:
-:caption: Documentation
-
-documentation/vector
-documentation/spaces
-documentation/wrappers
-```
-
-```{toctree}
-:hidden:
 :caption: Environments
 
 environments/atari/index

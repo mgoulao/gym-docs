@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Environment Creation" href="../environment_creation/" /><link rel="prev" title="Gym’s documentation" href="../../" />
 
     <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>API - Gym 0.23.0 documentation</title>
+        <title>API - Gym 0.23.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../"><div class="brand">Gym 0.23.0 documentation</div></a>
+      <a href="../../"><div class="brand">Gym 0.23.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
     <img class="sidebar-logo only-dark" src="../../_static/img/gym_logo_white.svg" alt="Dark Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Gym 0.23.0 documentation</span>
+  <span class="sidebar-brand-text">Gym 0.23.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -166,12 +166,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../wrappers/">Wrappers</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/openai/gym">Github</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../documentation/vector/">gym.vector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../documentation/spaces/">gym.spaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../documentation/wrappers/">gym.wrappers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
@@ -352,7 +346,9 @@ This example will run an instance of <code class="docutils literal notranslate">
 </pre></div>
 </div>
 <p>The output should look something like this</p>
-<p><img alt="lunar_lander" src="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif"/></p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif"><img alt="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif" src="https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif" style="width: 50%;"/></a>
+</figure>
 <p>Every environment specifies the format of valid actions by providing an <code class="docutils literal notranslate"><span class="pre">env.action_space</span></code> attribute. Similarly,
 the format of valid observations is specified by <code class="docutils literal notranslate"><span class="pre">env.observation_space</span></code>.
 In the example above we sampled random actions via <code class="docutils literal notranslate"><span class="pre">env.action_space.sample()</span></code>. Note that we need to seed the action space separately from the
@@ -362,27 +358,26 @@ environment to ensure reproducible samples.</p>
 <h2>Standard methods<a class="headerlink" href="#standard-methods" title="Permalink to this headline">#</a></h2>
 <section id="stepping">
 <h3>Stepping<a class="headerlink" href="#stepping" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">step(self,</span> <span class="pre">action:</span> <span class="pre">ActType)</span> <span class="pre">-&gt;</span> <span class="pre">Tuple[ObsType,</span> <span class="pre">float,</span> <span class="pre">bool,</span> <span class="pre">dict]</span></code></p>
-<p>Run one timestep of the environment’s dynamics. When end of episode is reached, you are responsible for calling <code class="docutils literal notranslate"><span class="pre">reset()</span></code>
-to reset this environment’s state. Accepts an action and returns a tuple <code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">reward,</span> <span class="pre">done,</span> <span class="pre">info)</span></code>.</p>
-<p><strong>Parameters</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>(<strong>object</strong>): an action provided by the agent. This will oftentimes be a numpy array, but might also be
-an integer (for discrete action spaces) or a more complex object. This should be am element of the environment’s
-action space <code class="docutils literal notranslate"><span class="pre">self.action_space</span></code>.</p></li>
-</ul>
-<p><strong>Returns</strong></p>
-<p>This method returns a tuple <code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">reward,</span> <span class="pre">done,</span> <span class="pre">info)</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">observation</span></code> (<strong>object</strong>): agent’s observation of the current environment. This will be an element of the environment’s
-observation space, <code class="docutils literal notranslate"><span class="pre">self.observation_space</span></code>. This may, for instance, be a numpy array containing the positions and velocities of certain objects.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">reward</span></code> (<strong>float</strong>) : amount of reward returned after previous action</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">done</span></code> (<strong>bool</strong>): whether the episode has ended, in which case further <code class="docutils literal notranslate"><span class="pre">step()</span></code> calls will return undefined results.
-A done signal may be emitted for different reasons: Maybe the task underlying the environment was solved successfully,
-a certain timelimit was exceeded, or the physics simulation has entered an invalid state. <code class="docutils literal notranslate"><span class="pre">info</span></code> may contain additional
-information regarding the reason for a <code class="docutils literal notranslate"><span class="pre">done</span></code> signal.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code> (<strong>dict</strong>): contains auxiliary diagnostic information (helpful for debugging, learning, and logging). This might, for instance,
-contain:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="gym.Env.step">
+<span class="sig-prename descclassname"><span class="pre">gym.Env.</span></span><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">gym.core.ActType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">gym.core.ObsType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gym.Env.step" title="Permalink to this definition">#</a></dt>
+<dd><p>Run one timestep of the environment’s dynamics. When end of
+episode is reached, you are responsible for calling <a class="reference internal" href="#gym.Env.reset" title="gym.Env.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset()</span></code></a>
+to reset this environment’s state.</p>
+<p>Accepts an action and returns a tuple (observation, reward, done, info).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<em>object</em>) – an action provided by the agent</p>
+</dd>
+</dl>
+<p>This method returns a tuple <code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">reward,</span> <span class="pre">done,</span> <span class="pre">info)</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>observation</strong> (<em>object</em>) – agent’s observation of the current environment. This will be an element of the environment’s <a class="reference internal" href="#gym.Env.observation_space" title="gym.Env.observation_space"><code class="xref py py-attr docutils literal notranslate"><span class="pre">observation_space</span></code></a>. This may, for instance, be a numpy array containing the positions and velocities of certain objects.</p></li>
+<li><p><strong>reward</strong> (<em>float</em>) – amount of reward returned after previous action</p></li>
+<li><p><strong>done</strong> (<em>bool</em>) – whether the episode has ended, in which case further <a class="reference internal" href="#gym.Env.step" title="gym.Env.step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">step()</span></code></a> calls will return undefined results. A done signal may be emitted for different reasons: Maybe the task underlying the environment was solved successfully, a certain timelimit was exceeded, or the physics simulation has entered an invalid state. <code class="docutils literal notranslate"><span class="pre">info</span></code> may contain additional information regarding the reason for a <code class="docutils literal notranslate"><span class="pre">done</span></code> signal.</p></li>
+<li><p><strong>info</strong> (<em>dict</em>) – contains auxiliary diagnostic information (helpful for debugging, learning, and logging). This might, for instance, contain:</p>
 <ul>
 <li><p>metrics that describe the agent’s performance or</p></li>
 <li><p>state variables that are hidden from observations or</p></li>
@@ -391,78 +386,151 @@ contain:</p>
 </ul>
 </li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
 </section>
 <section id="resetting">
 <h3>Resetting<a class="headerlink" href="#resetting" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">reset(self,</span> <span class="pre">*,</span> <span class="pre">seed:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">return_info:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">options:</span> <span class="pre">Optional[dict]</span> <span class="pre">=</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">ObsType</span> <span class="pre">|</span> <span class="pre">tuple[ObsType,</span> <span class="pre">dict]</span></code></p>
-<p>Resets the environment to an initial state and returns an initial observation.
-<strong>Parameters</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>(<strong>int</strong> or <strong>None</strong>): The seed that is used to initialize the environment’s PRNG. If the environment does not already
-have a PRNG and <code class="docutils literal notranslate"><span class="pre">seed=None</span></code>(the default option) is passed, a seed will be chosen from some source of entropy (e.g. timestamp
-or /dev/urandom). However, if the environment already has a PRNG and <code class="docutils literal notranslate"><span class="pre">seed=None</span></code> is pased, the PRNG will <em>not</em> be reset.
-If you pass an integer, the PRNG will be reset even if it already exists. Usually, you want to pass an integer <em>right after the environment
-has been initialized and then never again</em>. Please refer to the minimal example above to see this paradigm in action.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">return_info</span></code>(<strong>bool</strong>): If true, return additional information along with initial observation. This info should be analogous
-to the info returned in <code class="docutils literal notranslate"><span class="pre">step</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code>(<strong>dict</strong> or <strong>None</strong>): Additional information to specify how the environment is reset (optional, depending on the specific environment)</p></li>
+<dl class="py function">
+<dt class="sig sig-object py" id="gym.Env.reset">
+<span class="sig-prename descclassname"><span class="pre">gym.Env.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">gym.core.ObsType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ObsType</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gym.Env.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>Resets the environment to an initial state and returns an initial
+observation.</p>
+<p>This method should also reset the environment’s random number
+generator(s) if <code class="docutils literal notranslate"><span class="pre">seed</span></code> is an integer or if the environment has not
+yet initialized a random number generator. If the environment already
+has a random number generator and <a class="reference internal" href="#gym.Env.reset" title="gym.Env.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset()</span></code></a> is called with <code class="docutils literal notranslate"><span class="pre">seed=None</span></code>,
+the RNG should not be reset.
+Moreover, <a class="reference internal" href="#gym.Env.reset" title="gym.Env.reset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reset()</span></code></a> should (in the typical use case) be called with an
+integer seed right after initialization and then never again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed</strong> (<em>int</em><em> or </em><em>None</em>) – The seed that is used to initialize the environment’s PRNG. If the environment does not already have a PRNG and <code class="docutils literal notranslate"><span class="pre">seed=None</span></code> (the default option) is passed, a seed will be chosen from some source of entropy (e.g. timestamp or /dev/urandom). However, if the environment already has a PRNG and <code class="docutils literal notranslate"><span class="pre">seed=None</span></code> is pased, the PRNG will <em>not</em> be reset. If you pass an integer, the PRNG will be reset even if it already exists. Usually, you want to pass an integer <em>right after the environment has been initialized and then never again</em>. Please refer to the minimal example above to see this paradigm in action.</p></li>
+<li><p><strong>return_info</strong> (<em>bool</em>) – If true, return additional information along with initial observation. This info should be analogous to the info returned in <a class="reference internal" href="#gym.Env.step" title="gym.Env.step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">step()</span></code></a></p></li>
+<li><p><strong>options</strong> (<em>dict</em><em> or </em><em>None</em>) – Additional information to specify how the environment is reset (optional, depending on the specific environment)</p></li>
 </ul>
-<p><strong>Returns</strong></p>
-<p>This method will return an observation of the initial environment state. If <code class="docutils literal notranslate"><span class="pre">return_info=True</span></code> is passed, the method returns a tuple
-<code class="docutils literal notranslate"><span class="pre">(observation,</span> <span class="pre">info)</span></code>, otherwise only <code class="docutils literal notranslate"><span class="pre">observation</span></code> will be returned.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">observation</span></code> (<strong>object</strong>): Observation of the initial state. This will be an element of <code class="docutils literal notranslate"><span class="pre">env.observation_space</span></code> (usually a numpy array) and is analogous to
-the observation returned by <code class="docutils literal notranslate"><span class="pre">step</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">info</span></code> (<strong>dict</strong>): This will <em>only</em> be returned if <code class="docutils literal notranslate"><span class="pre">return_info=True</span></code> is passed. It contains auxiliary information complementing <code class="docutils literal notranslate"><span class="pre">observation</span></code>. This dictionary should be analogous to the <code class="docutils literal notranslate"><span class="pre">info</span></code> returned by <code class="docutils literal notranslate"><span class="pre">step</span></code>.</p></li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>observation</strong> (<em>object</em>) – Observation of the initial state. This will be an element of <a class="reference internal" href="#gym.Env.observation_space" title="gym.Env.observation_space"><code class="xref py py-attr docutils literal notranslate"><span class="pre">observation_space</span></code></a> (usually a numpy array) and is analogous to the observation returned by <a class="reference internal" href="#gym.Env.step" title="gym.Env.step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">step()</span></code></a>.</p></li>
+<li><p><strong>info</strong> (<em>optional dictionary</em>) – This will <em>only</em> be returned if <code class="docutils literal notranslate"><span class="pre">return_info=True</span></code> is passed. It contains auxiliary information complementing <code class="docutils literal notranslate"><span class="pre">observation</span></code>. This dictionary should be analogous to the <code class="docutils literal notranslate"><span class="pre">info</span></code> returned by <a class="reference internal" href="#gym.Env.step" title="gym.Env.step"><code class="xref py py-meth docutils literal notranslate"><span class="pre">step()</span></code></a>.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
 </section>
 <section id="rendering">
 <h3>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">render(self,</span> <span class="pre">mode:</span> <span class="pre">str="human")</span> <span class="pre">-&gt;</span> <span class="pre">Optional[np.ndarray</span> <span class="pre">|</span> <span class="pre">str]</span></code>
-<strong>Parameters</strong></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="gym.Env.render">
+<span class="sig-prename descclassname"><span class="pre">gym.Env.</span></span><span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'human'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.Env.render" title="Permalink to this definition">#</a></dt>
+<dd><p>Renders the environment.</p>
+<p>The set of supported modes varies per environment. (And some
+third-party environments may not support rendering at all.)
+By convention, if mode is:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>(<strong>str</strong>): This parameter specifies how the environment is rendered. The set of supported modes varies per environment
-(and some third-party environments may not support). By convention, if mode is:
-- “human”: render to the current display or terminal and return nothing. Usually for human consumption.
-- “rgb_array”: Return an np.ndarray with shape (height, width, 3), representing RGB values, suitable
-for turning into a video.
-- “ansi”: Return a string (str) or StringIO.StringIO containing a
+<li><p>human: render to the current display or terminal and
+return nothing. Usually for human consumption.</p></li>
+<li><p>rgb_array: Return an numpy.ndarray with shape (x, y, 3),
+representing RGB values for an x-by-y pixel image, suitable
+for turning into a video.</p></li>
+<li><p>ansi: Return a string (str) or StringIO.StringIO containing a
 terminal-style text representation. The text can include newlines
 and ANSI escape sequences (e.g. for colors).</p></li>
 </ul>
-<p><strong>Returns</strong></p>
-<p>Depending on the <code class="docutils literal notranslate"><span class="pre">mode</span></code>, this method may return a representation of the environment as a <strong>str</strong> or <strong>ndarray</strong>.
-It may also return <strong>None</strong> e.g. if <code class="docutils literal notranslate"><span class="pre">mode="human"</span></code></p>
-<p>Make sure that your class’s metadata ‘render.modes’ key includes  the list of supported modes. It’s recommended to call super()
-implementations to use the functionality of this method.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>Make sure that your class’s metadata ‘render_modes’ key includes</dt><dd><p>the list of supported modes. It’s recommended to call super()
+in implementations to use the functionality of this method.</p>
+</dd>
+</dl>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – the mode to render with</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyEnv</span><span class="p">(</span><span class="n">Env</span><span class="p">):</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'render_modes'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'human'</span><span class="p">,</span> <span class="s1">'rgb_array'</span><span class="p">]}</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'human'</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">'rgb_array'</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># return RGB frame suitable for video</span>
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">'human'</span><span class="p">:</span>
+            <span class="o">...</span> <span class="c1"># pop up a window and render</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">MyEnv</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span> <span class="c1"># just raise an exception</span>
+</pre></div>
+</div>
+</dd></dl>
 </section>
 </section>
 <section id="additional-environment-api">
 <h2>Additional Environment API<a class="headerlink" href="#additional-environment-api" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">action_space</span></code>: this attribute gives the format of valid actions. It is of datatype <code class="docutils literal notranslate"><span class="pre">Space</span></code> provided by Gym. For example, if the action space is of type <code class="docutils literal notranslate"><span class="pre">Discrete</span></code> and gives the value <code class="docutils literal notranslate"><span class="pre">Discrete(2)</span></code>, this means there are two valid discrete actions: 0 &amp; 1.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">#</a></h3>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym.Env.action_space">
+<span class="sig-prename descclassname"><span class="pre">Env.</span></span><span class="sig-name descname"><span class="pre">action_space</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">gym.spaces.space.Space</span><span class="p"><span class="pre">[</span></span><span class="pre">gym.core.ActType</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym.Env.action_space" title="Permalink to this definition">#</a></dt>
+<dd><p>This attribute gives the format of valid actions. It is of datatype <cite>Space</cite> provided by Gym. For example, if the action space is of type <cite>Discrete</cite> and gives the value <cite>Discrete(2)</cite>, this means there are two valid discrete actions: 0 &amp; 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span>
 <span class="go">Discrete(2)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span>
 <span class="go">Box(-3.4028234663852886e+38, 3.4028234663852886e+38, (4,), float32)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">observation_space</span></code>: this attribute gives the format of valid observations. It is of datatype <code class="docutils literal notranslate"><span class="pre">Space</span></code> provided by Gym. For example, if the observation space is of type <code class="docutils literal notranslate"><span class="pre">Box</span></code> and the shape of the object is <code class="docutils literal notranslate"><span class="pre">(4,)</span></code>, this denotes a valid observation will be an array of 4 numbers. We can check the box bounds as well with attributes.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym.Env.observation_space">
+<span class="sig-prename descclassname"><span class="pre">Env.</span></span><span class="sig-name descname"><span class="pre">observation_space</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">gym.spaces.space.Space</span><span class="p"><span class="pre">[</span></span><span class="pre">gym.core.ObsType</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gym.Env.observation_space" title="Permalink to this definition">#</a></dt>
+<dd><p>this attribute gives the format of valid observations. It is of datatype <code class="xref py py-class docutils literal notranslate"><span class="pre">Space</span></code> provided by Gym. For example, if the observation space is of type <code class="xref py py-class docutils literal notranslate"><span class="pre">Box</span></code> and the shape of the object is <code class="docutils literal notranslate"><span class="pre">(4,)</span></code>, this denotes a valid observation will be an array of 4 numbers. We can check the box bounds as well with attributes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">high</span>
 <span class="go">array([4.8000002e+00, 3.4028235e+38, 4.1887903e-01, 3.4028235e+38], dtype=float32)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">env</span><span class="o">.</span><span class="n">observation_space</span><span class="o">.</span><span class="n">low</span>
 <span class="go">array([-4.8000002e+00, -3.4028235e+38, -4.1887903e-01, -3.4028235e+38], dtype=float32)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">reward_range</span></code>: returns a tuple corresponding to min and max possible rewards. Default range is set to <code class="docutils literal notranslate"><span class="pre">[-inf,+inf]</span></code>. You can set it if you want a narrower range .</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">close()</span></code>: override close in your subclass to perform any necessary cleanup.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">seed()</span></code>: sets the seed for this environment’s random number generator. This method is being deprecated in favor of passing the keyword argument <code class="docutils literal notranslate"><span class="pre">seed</span></code> to <code class="docutils literal notranslate"><span class="pre">reset</span></code>.
-Nonetheless, you will see this method being used heavily in older code.</p></li>
-</ul>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gym.Env.reward_range">
+<span class="sig-prename descclassname"><span class="pre">Env.</span></span><span class="sig-name descname"><span class="pre">reward_range</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(-inf,</span> <span class="pre">inf)</span></em><a class="headerlink" href="#gym.Env.reward_range" title="Permalink to this definition">#</a></dt>
+<dd><p>returns a tuple corresponding to min and max possible rewards. Default range is set to <code class="docutils literal notranslate"><span class="pre">[-inf,+inf]</span></code>. You can set it if you want a narrower range .</p>
+</dd></dl>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="gym.Env.close">
+<span class="sig-prename descclassname"><span class="pre">gym.Env.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.Env.close" title="Permalink to this definition">#</a></dt>
+<dd><p>Override close in your subclass to perform any necessary cleanup.</p>
+<p>Environments will automatically close() themselves when
+garbage collected or when the program exits.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="gym.Env.seed">
+<span class="sig-prename descclassname"><span class="pre">gym.Env.</span></span><span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.Env.seed" title="Permalink to this definition">#</a></dt>
+<dd><p>Sets the seed for this env’s random number generator(s).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some environments use multiple pseudorandom number generators.
+We want to capture all such seeds used in order to ensure that
+there aren’t accidental correlations between multiple generators.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>list&lt;bigint&gt;</strong> – Returns the list of seeds used in this env’s random
+number generators. The first value in the list should be the
+“main” seed, or the value which a reproducer should pass to
+‘seed’. Often, the main seed equals the provided ‘seed’, but
+this won’t be true if seed=None, for example.</p>
+</dd>
+</dl>
+</dd></dl>
+</section>
 </section>
 <section id="spaces">
 <h2>Spaces<a class="headerlink" href="#spaces" title="Permalink to this headline">#</a></h2>
@@ -514,7 +582,7 @@ There are multiple <code class="docutils literal notranslate"><span class="pre">
 <h2>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline">#</a></h2>
 <p>Wrappers are a convenient way to modify an existing environment without having to alter the underlying code directly.
 Using wrappers will allow you to avoid a lot of boilerplate code and make your environment more modular. Wrappers can
-also chained to combine their effects. Most environments that are generated via <code class="docutils literal notranslate"><span class="pre">gym.make</span></code> will already be wrapped by default.</p>
+also be chained to combine their effects. Most environments that are generated via <code class="docutils literal notranslate"><span class="pre">gym.make</span></code> will already be wrapped by default.</p>
 <p>In order to wrap an environment, you must first initialize a base environment. Then you can pass this environment along
 with (possibly optional) parameters to the wrapper’s constructor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
@@ -656,7 +724,11 @@ For example, if pressing the keys <code class="docutils literal notranslate"><sp
 <li><a class="reference internal" href="#rendering">Rendering</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#additional-environment-api">Additional Environment API</a></li>
+<li><a class="reference internal" href="#additional-environment-api">Additional Environment API</a><ul>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#spaces">Spaces</a></li>
 <li><a class="reference internal" href="#wrappers">Wrappers</a></li>
 <li><a class="reference internal" href="#playing-within-an-environment">Playing within an environment</a></li>
