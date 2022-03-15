@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v2
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt && pip install gym
+        run: pip install -r docs/requirements.txt && git clone https://github.com/mgoulao/gym.git && pip install ./gym
       
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build

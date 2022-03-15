@@ -86,4 +86,7 @@ html_css_files = [
     'css/custom.css',
 ]
 
+# See https://github.com/sphinx-doc/sphinx/issues/9119
+napoleon_custom_sections = [('Returns', 'params_style')]
+
 sphinx_github_changelog_token = os.environ.get("SPHINX_GITHUB_CHANGELOG_TOKEN")
