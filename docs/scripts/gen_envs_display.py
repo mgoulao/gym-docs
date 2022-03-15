@@ -86,12 +86,12 @@ all_envs = [
 ]
 
 
-def create_grid_cell(type_id, env_id, static_path):
+def create_grid_cell(type_id, env_id, path):
     return f'''
-            <a href="{env_id}">
+            <a href="{path}{env_id}">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="{static_path}/_static/videos/{type_id}/{env_id}.gif">
+                        <img src="../../{path}_static/videos/{type_id}/{env_id}.gif">
                     </div>
                     <div class="cell__title">
                         <span>{' '.join(env_id.split('_')).title()}</span>
@@ -101,10 +101,10 @@ def create_grid_cell(type_id, env_id, static_path):
     '''
 
 
-def generate_page(env, limit=-1, static_path='../..'):
+def generate_page(env, limit=-1, path=''):
     env_type_id = env['id']
     env_list = env['list']
-    cells = [create_grid_cell(env_type_id, env_id, static_path) for env_id in env_list]
+    cells = [create_grid_cell(env_type_id, env_id, path) for env_id in env_list]
     non_limited_page = limit == -1 or limit >= len(cells)
     if non_limited_page:
         cells = '\n'.join(cells)
@@ -117,7 +117,7 @@ def generate_page(env, limit=-1, static_path='../..'):
 
 <html>
     <body>
-        <link rel="stylesheet" href="{static_path}/_static/css/env_pages.css">
+        <link rel="stylesheet" href="../../{path}_static/css/env_pages.css">
 
         <div class="env-grid">
             {cells}
@@ -152,7 +152,7 @@ if __name__ == "__main__":
             fp.write(page)
             fp.close()
 
-            page = generate_page(type_dict, static_path='../../..')
+            page = generate_page(type_dict, path='../')
             fp = open(f'{envs_path}/complete_list.html', 'w+', encoding='utf-8')
             fp.write(page)
             fp.close()
