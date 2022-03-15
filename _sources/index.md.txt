@@ -30,7 +30,7 @@ hide-toc: true
 
 ```{toctree}
 :hidden:
-:caption: Base
+:caption: User Guide
 
 content/api
 content/environment_creation
