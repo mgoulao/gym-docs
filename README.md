@@ -8,11 +8,11 @@ This is a fork of the [gym-docs](https://github.com/Farama-Foundation/gym-docs) 
 **Build**
 
 ```
-make html
+make dirhtml
 ```
 
 **Build with hot-reloading**
 
 ```
-sphinx-autobuild ./source build/html
+sphinx-autobuild -b dirhtml ./source build/html
 ```
