@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Atari" href="../../environments/atari/" /><link rel="prev" title="Tutorials" href="../tutorials/" />
-        <link rel="canonical" href="www.gymlibrary.ml/content/wrappers.html" />
+        <link rel="canonical" href="https://www.gymlibrary.ml/content/wrappers.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Wrappers - Gym 0.23.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     
@@ -290,7 +290,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -305,7 +306,7 @@
         </div>
         <article role="main">
           <section id="wrappers">
-<h1>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this headline">#</a></h1>
+<h1>Wrappers<a class="headerlink" href="#wrappers" title="Permalink to this heading">#</a></h1>
 <p>Wrappers are a convenient way to modify an existing environment without having to alter the underlying code directly.
 Using wrappers will allow you to avoid a lot of boilerplate code and make your environment more modular. Wrappers can
 also be chained to combine their effects. Most environments that are generated via <code class="docutils literal notranslate"><span class="pre">gym.make</span></code> will already be wrapped by default.</p>
@@ -313,7 +314,7 @@ also be chained to combine their effects. Most environments that are generated v
 with (possibly optional) parameters to the wrapper’s constructor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gym</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gym.wrappers</span> <span class="kn">import</span> <span class="n">RescaleAction</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"BipedalWalker-v3"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;BipedalWalker-v3&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">base_env</span><span class="o">.</span><span class="n">action_space</span>
 <span class="go">Box([-1. -1. -1. -1.], [1. 1. 1. 1.], (4,), float32)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">wrapped_env</span> <span class="o">=</span> <span class="n">RescaleAction</span><span class="p">(</span><span class="n">base_env</span><span class="p">,</span> <span class="n">min_action</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_action</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -347,7 +348,7 @@ If the environment is already a base environment, the <code class="docutils lite
 <p>Such wrappers can be easily implemented by inheriting from <code class="docutils literal notranslate"><span class="pre">ActionWrapper</span></code>, <code class="docutils literal notranslate"><span class="pre">ObservationWrapper</span></code>, or <code class="docutils literal notranslate"><span class="pre">RewardWrapper</span></code> and implementing the
 respective transformation. If you need a wrapper to do more complicated tasks, you can inherit from the <code class="docutils literal notranslate"><span class="pre">Wrapper</span></code> class directly.</p>
 <section id="actionwrapper">
-<h2>ActionWrapper<a class="headerlink" href="#actionwrapper" title="Permalink to this headline">#</a></h2>
+<h2>ActionWrapper<a class="headerlink" href="#actionwrapper" title="Permalink to this heading">#</a></h2>
 <p>If you would like to apply a function to the action before passing it to the base environment,
 you can simply inherit from <code class="docutils literal notranslate"><span class="pre">ActionWrapper</span></code> and overwrite the method <code class="docutils literal notranslate"><span class="pre">action</span></code> to implement that transformation.
 The transformation defined in that method must take values in the base environment’s action space.
@@ -364,8 +365,8 @@ only like to use a finite subset of actions. Then, you might want to implement t
     <span class="k">def</span> <span class="nf">action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">act</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">disc_to_cont</span><span class="p">[</span><span class="n">act</span><span class="p">]</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"LunarLanderContinuous-v2"</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;LunarLanderContinuous-v2&quot;</span><span class="p">)</span>
     <span class="n">wrapped_env</span> <span class="o">=</span> <span class="n">DiscreteActions</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span>
                                         <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">])])</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">wrapped_env</span><span class="o">.</span><span class="n">action_space</span><span class="p">)</span>         <span class="c1">#Discrete(4)</span>
@@ -374,15 +375,15 @@ only like to use a finite subset of actions. Then, you might want to implement t
 <p>Among others, Gym provides the action wrappers <code class="docutils literal notranslate"><span class="pre">ClipAction</span></code> and <code class="docutils literal notranslate"><span class="pre">RescaleAction</span></code>.</p>
 </section>
 <section id="observationwrapper">
-<h2>ObservationWrapper<a class="headerlink" href="#observationwrapper" title="Permalink to this headline">#</a></h2>
+<h2>ObservationWrapper<a class="headerlink" href="#observationwrapper" title="Permalink to this heading">#</a></h2>
 <p>If you would like to apply a function to the observation that is returned by the base environment before passing
 it to learning code, you can simply inherit from <code class="docutils literal notranslate"><span class="pre">ObservationWrapper</span></code> and overwrite the method <code class="docutils literal notranslate"><span class="pre">observation</span></code> to
 implement that transformation. The transformation defined in that method must be defined on the base environment’s
 observation space. However, it may take values in a different space. In that case, you need to specify the new
 observation space of the wrapper by setting <code class="docutils literal notranslate"><span class="pre">self._observation_space</span></code> in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of your wrapper.</p>
-<p>For example, you might have a 2D navigation task where the environment returns dictionaries as observations with keys <code class="docutils literal notranslate"><span class="pre">"agent_position"</span></code>
-and <code class="docutils literal notranslate"><span class="pre">"target_position"</span></code>. A common thing to do might be to throw away some degrees of freedom and only consider
-the position of the target relative to the agent, i.e. <code class="docutils literal notranslate"><span class="pre">observation["target_position"]</span> <span class="pre">-</span> <span class="pre">observation["agent_position"]</span></code>.
+<p>For example, you might have a 2D navigation task where the environment returns dictionaries as observations with keys <code class="docutils literal notranslate"><span class="pre">&quot;agent_position&quot;</span></code>
+and <code class="docutils literal notranslate"><span class="pre">&quot;target_position&quot;</span></code>. A common thing to do might be to throw away some degrees of freedom and only consider
+the position of the target relative to the agent, i.e. <code class="docutils literal notranslate"><span class="pre">observation[&quot;target_position&quot;]</span> <span class="pre">-</span> <span class="pre">observation[&quot;agent_position&quot;]</span></code>.
 For this, you could implement an observation wrapper like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RelativePosition</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">ObservationWrapper</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">):</span>
@@ -390,14 +391,14 @@ For this, you could implement an observation wrapper like this:</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">_observation_space</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">low</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
     
     <span class="k">def</span> <span class="nf">observation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">obs</span><span class="p">[</span><span class="s2">"target_position"</span><span class="p">]</span> <span class="o">-</span> <span class="n">obs</span><span class="p">[</span><span class="s2">"agent_position"</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;target_position&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;agent_position&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Among others, Gym provides the observation wrapper <code class="docutils literal notranslate"><span class="pre">TimeAwareObservation</span></code>, which adds information about the index of the timestep
 to the observation.</p>
 </section>
 <section id="rewardwrapper">
-<h2>RewardWrapper<a class="headerlink" href="#rewardwrapper" title="Permalink to this headline">#</a></h2>
+<h2>RewardWrapper<a class="headerlink" href="#rewardwrapper" title="Permalink to this heading">#</a></h2>
 <p>If you would like to apply a function to the reward that is returned by the base environment before passing
 it to learning code, you can simply inherit from <code class="docutils literal notranslate"><span class="pre">RewardWrapper</span></code> and overwrite the method <code class="docutils literal notranslate"><span class="pre">reward</span></code> to
 implement that transformation. This transformation might change the reward range; to specify the reward range of
@@ -417,7 +418,7 @@ to a range to gain some numerical stability. To do that, we could, for instance,
 </div>
 </section>
 <section id="general-wrappers">
-<h2>General Wrappers<a class="headerlink" href="#general-wrappers" title="Permalink to this headline">#</a></h2>
+<h2>General Wrappers<a class="headerlink" href="#general-wrappers" title="Permalink to this heading">#</a></h2>
 <p>Sometimes you might need to implement a wrapper that does some more complicated modifications (e.g. modify the
 reward based on data in <code class="docutils literal notranslate"><span class="pre">info</span></code> or change the rendering behavior).
 Such wrappers can be implemented by inheriting from <code class="docutils literal notranslate"><span class="pre">Wrapper</span></code>.</p>
@@ -440,7 +441,7 @@ of the reward are returned in <code class="docutils literal notranslate"><span c
 
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
         <span class="n">obs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
-        <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_dist_weight</span><span class="o">*</span><span class="n">info</span><span class="p">[</span><span class="s2">"reward_dist"</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_ctrl_weight</span><span class="o">*</span><span class="n">info</span><span class="p">[</span><span class="s2">"reward_ctrl"</span><span class="p">]</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_dist_weight</span><span class="o">*</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;reward_dist&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_ctrl_weight</span><span class="o">*</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;reward_ctrl&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span>
 </pre></div>
 </div>
@@ -527,6 +528,7 @@ of the reward are returned in <code class="docutils literal notranslate"><span c
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     </body>

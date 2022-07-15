@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Tutorials" href="../tutorials/" /><link rel="prev" title="Spaces" href="../spaces/" />
-        <link rel="canonical" href="www.gymlibrary.ml/content/vector_api.html" />
+        <link rel="canonical" href="https://www.gymlibrary.ml/content/vector_api.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Vector API - Gym 0.23.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     
@@ -290,7 +290,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -305,9 +306,9 @@
         </div>
         <article role="main">
           <section id="vector-api">
-<h1>Vector API<a class="headerlink" href="#vector-api" title="Permalink to this headline">#</a></h1>
+<h1>Vector API<a class="headerlink" href="#vector-api" title="Permalink to this heading">#</a></h1>
 <section id="vectorized-environments">
-<h2>Vectorized Environments<a class="headerlink" href="#vectorized-environments" title="Permalink to this headline">#</a></h2>
+<h2>Vectorized Environments<a class="headerlink" href="#vectorized-environments" title="Permalink to this heading">#</a></h2>
 <p><em>Vectorized environments</em> are environments that run multiple (independent) sub-environments, either sequentially, or in parallel using <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing</a>. Vectorized environments take as input a batch of actions, and return a batch of observations. This is particularly useful, for example, when the policy is defined as a neural network that operates over a batch of observations.</p>
 <p>Gym provides two types of vectorized environments:</p>
 <ul class="simple">
@@ -316,7 +317,7 @@
 </ul>
 <p>Similar to <code class="docutils literal notranslate"><span class="pre">gym.make</span></code>, you can run a vectorized version of a registered environment using the <code class="docutils literal notranslate"><span class="pre">gym.vector.make</span></code> function. This runs multiple copies of the same environment (in parallel, by default).</p>
 <p>The following example runs 3 copies of the <code class="docutils literal notranslate"><span class="pre">CartPole-v1</span></code> environment in parallel, taking as input a vector of 3 binary actions (one for each sub-environment), and returning an array of 3 observations stacked along the first dimension, with an array of rewards returned by each sub-environment, and an array of booleans indicating if the episode in each sub-environment has ended.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">actions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">observations</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">envs</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span>
@@ -336,42 +337,42 @@
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">gym.vector.make</span></code> is meant to be used only in basic cases (e.g. running multiple copies of the same registered environment). For any other use-cases, please use either the <code class="docutils literal notranslate"><span class="pre">SyncVectorEnv</span></code> for sequential execution, or <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv</span></code> for parallel execution. These use-cases may include:</p>
 <ul class="simple">
-<li><p>Running multiple instances of the same environment with different parameters (e.g. <code class="docutils literal notranslate"><span class="pre">"Pendulum-v0"</span></code> with different values for the gravity).</p></li>
+<li><p>Running multiple instances of the same environment with different parameters (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Pendulum-v0&quot;</span></code> with different values for the gravity).</p></li>
 <li><p>Running multiple instances of an unregistered environment (e.g. a custom environment).</p></li>
 <li><p>Using a wrapper on some (but not all) sub-environments.</p></li>
 </ul>
 <section id="creating-a-vectorized-environment">
-<h3>Creating a vectorized environment<a class="headerlink" href="#creating-a-vectorized-environment" title="Permalink to this headline">#</a></h3>
+<h3>Creating a vectorized environment<a class="headerlink" href="#creating-a-vectorized-environment" title="Permalink to this heading">#</a></h3>
 <p>To create a vectorized environment that runs multiple sub-environments, you can wrap your sub-environments inside <code class="docutils literal notranslate"><span class="pre">gym.vector.SyncVectorEnv</span></code> (for sequential execution), or <code class="docutils literal notranslate"><span class="pre">gym.vector.AsyncVectorEnv</span></code> (for parallel execution, with <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing</a>). These vectorized environments take as input a list of callables specifying how the sub-environments are created.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">AsyncVectorEnv</span><span class="p">([</span>
-<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">),</span>
-<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">),</span>
-<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">)</span>
 <span class="gp">... </span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Alternatively, to create a vectorized environment of multiple copies of the same registered sub-environment, you can use the function <code class="docutils literal notranslate"><span class="pre">gym.vector.make()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Equivalent</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Equivalent</span>
 </pre></div>
 </div>
 <p>To enable automatic batching of actions and observations, all of the sub-environments must share the same <code class="docutils literal notranslate"><span class="pre">action_space</span></code> and <code class="docutils literal notranslate"><span class="pre">observation_space</span></code>. However, all of the sub-environments are not required to be exact copies of one another. For example, you can run 2 instances of <code class="docutils literal notranslate"><span class="pre">Pendulum-v0</span></code> with different values for gravity in a vectorized environment with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">AsyncVectorEnv</span><span class="p">([</span>
-<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"Pendulum-v0"</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">),</span>
-<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"Pendulum-v0"</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">1.62</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Pendulum-v0&quot;</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="k">lambda</span><span class="p">:</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Pendulum-v0&quot;</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">1.62</span><span class="p">)</span>
 <span class="gp">... </span><span class="p">])</span>
 </pre></div>
 </div>
 <p>See the <code class="docutils literal notranslate"><span class="pre">Observation</span> <span class="pre">&amp;</span> <span class="pre">Action</span> <span class="pre">spaces</span></code> section for more information about automatic batching.</p>
-<p>When using <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv</span></code> with either the <code class="docutils literal notranslate"><span class="pre">spawn</span></code> or <code class="docutils literal notranslate"><span class="pre">forkserver</span></code> start methods, you must wrap your code containing the vectorized environment with <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">"__main__":</span></code>. See <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html#the-spawn-and-forkserver-start-methods">this documentation</a> for more information.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">"spawn"</span><span class="p">)</span>
+<p>When using <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv</span></code> with either the <code class="docutils literal notranslate"><span class="pre">spawn</span></code> or <code class="docutils literal notranslate"><span class="pre">forkserver</span></code> start methods, you must wrap your code containing the vectorized environment with <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>. See <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html#the-spawn-and-forkserver-start-methods">this documentation</a> for more information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;spawn&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="working-with-vectorized-environments">
-<h3>Working with vectorized environments<a class="headerlink" href="#working-with-vectorized-environments" title="Permalink to this headline">#</a></h3>
+<h3>Working with vectorized environments<a class="headerlink" href="#working-with-vectorized-environments" title="Permalink to this heading">#</a></h3>
 <p>While standard Gym environments take a single action and return a single observation (with a reward, and boolean indicating termination), vectorized environments take a <em>batch of actions</em> as input, and return a <em>batch of observations</em>, together with an array of rewards and booleans indicating if the episode ended in each sub-environment.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; envs.reset()
 array([[ 0.00198895, -0.00569421, -0.03170966,  0.00126465],
        [-0.02658334,  0.00755256,  0.04376719, -0.00266695],
@@ -397,13 +398,13 @@ array([False, False, False])
 <p>Vectorized environments are compatible with any sub-environment, regardless of the action and observation spaces (e.g. container spaces like <code class="docutils literal notranslate"><span class="pre">gym.spaces.Dict</span></code>, or any arbitrarily nested spaces). In particular, vectorized environments can automatically batch the observations returned by <code class="docutils literal notranslate"><span class="pre">VectorEnv.reset</span></code> and <code class="docutils literal notranslate"><span class="pre">VectorEnv.step</span></code> for any standard Gym <code class="docutils literal notranslate"><span class="pre">Space</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">gym.spaces.Box</span></code>, <code class="docutils literal notranslate"><span class="pre">gym.spaces.Discrete</span></code>, <code class="docutils literal notranslate"><span class="pre">gym.spaces.Dict</span></code>, or any nested structure thereof). Similarly, vectorized environments can take batches of actions from any standard Gym <code class="docutils literal notranslate"><span class="pre">Space</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; class DictEnv(gym.Env):
 ...     observation_space = gym.spaces.Dict({
-...         "position": gym.spaces.Box(-1., 1., (3,), np.float32),
-...         "velocity": gym.spaces.Box(-1., 1., (2,), np.float32)
+...         &quot;position&quot;: gym.spaces.Box(-1., 1., (3,), np.float32),
+...         &quot;velocity&quot;: gym.spaces.Box(-1., 1., (2,), np.float32)
 ...     })
 ...     action_space = gym.spaces.Dict({
-...         "fire": gym.spaces.Discrete(2),
-...         "jump": gym.spaces.Discrete(2),
-...         "acceleration": gym.spaces.Box(-1., 1., (2,), np.float32)
+...         &quot;fire&quot;: gym.spaces.Discrete(2),
+...         &quot;jump&quot;: gym.spaces.Discrete(2),
+...         &quot;acceleration&quot;: gym.spaces.Box(-1., 1., (2,), np.float32)
 ...     })
 ...
 ...     def reset(self):
@@ -421,22 +422,22 @@ Dict(fire:MultiDiscrete([2 2 2]), jump:MultiDiscrete([2 2 2]), acceleration:Box(
 
 &gt;&gt;&gt; envs.reset()
 &gt;&gt;&gt; actions = {
-...     "fire": np.array([1, 1, 0]),
-...     "jump": np.array([0, 1, 0]),
-...     "acceleration": np.random.uniform(-1., 1., size=(3, 2))
+...     &quot;fire&quot;: np.array([1, 1, 0]),
+...     &quot;jump&quot;: np.array([0, 1, 0]),
+...     &quot;acceleration&quot;: np.random.uniform(-1., 1., size=(3, 2))
 ... }
 &gt;&gt;&gt; observations, rewards, dones, infos = envs.step(actions)
 &gt;&gt;&gt; observations
-{"position": array([[-0.5337036 ,  0.7439302 ,  0.41748118],
+{&quot;position&quot;: array([[-0.5337036 ,  0.7439302 ,  0.41748118],
                     [ 0.9373266 , -0.5780453 ,  0.8987405 ],
                     [-0.917269  , -0.5888639 ,  0.812942  ]], dtype=float32),
-"velocity": array([[ 0.23626241, -0.0616814 ],
+&quot;velocity&quot;: array([[ 0.23626241, -0.0616814 ],
                    [-0.4057572 , -0.4875375 ],
                    [ 0.26341468,  0.72282314]], dtype=float32)}
 </pre></div>
 </div>
 <p>The sub-environments inside a vectorized environment automatically call <code class="docutils literal notranslate"><span class="pre">gym.Env.reset</span></code> at the end of an episode. In the following example, the episode of the 3rd sub-environment ends after 2 steps (the agent fell in a hole), and the sub-environment gets reset (observation <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("FrozenLake-v1", num_envs=3, is_slippery=False)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;FrozenLake-v1&quot;, num_envs=3, is_slippery=False)
 &gt;&gt;&gt; envs.reset()
 array([0, 0, 0])
 &gt;&gt;&gt; observations, rewards, dones, infos = envs.step(np.array([1, 2, 2]))
@@ -451,9 +452,9 @@ array([8, 2, 0])
 </section>
 </section>
 <section id="observation-action-spaces">
-<h2>Observation &amp; Action spaces<a class="headerlink" href="#observation-action-spaces" title="Permalink to this headline">#</a></h2>
+<h2>Observation &amp; Action spaces<a class="headerlink" href="#observation-action-spaces" title="Permalink to this heading">#</a></h2>
 <p>Like any Gym environment, vectorized environments contain the two properties <code class="docutils literal notranslate"><span class="pre">VectorEnv.observation_space</span></code> and <code class="docutils literal notranslate"><span class="pre">VectorEnv.action_space</span></code> to specify the observation and action spaces of the environments. Since vectorized environments operate on multiple sub-environments, where the actions taken and observations returned by all of the sub-environments are batched together, the observation and action <em>spaces</em> are batched as well so that the input actions are valid elements of <code class="docutils literal notranslate"><span class="pre">VectorEnv.action_space</span></code>, and the observations are valid elements of <code class="docutils literal notranslate"><span class="pre">VectorEnv.observation_space</span></code>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; envs.observation_space
 Box([[-4.8 ...]], [[4.8 ...]], (3, 4), float32)
 &gt;&gt;&gt; envs.action_space
@@ -462,14 +463,14 @@ MultiDiscrete([2 2 2])
 </div>
 <p>In order to appropriately batch the observations and actions in vectorized environments, the observation and action spaces of all of the sub-environments are required to be identical.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.AsyncVectorEnv([
-...     lambda: gym.make("CartPole-v1"),
-...     lambda: gym.make("MountainCar-v0")
+...     lambda: gym.make(&quot;CartPole-v1&quot;),
+...     lambda: gym.make(&quot;MountainCar-v0&quot;)
 ... ])
 RuntimeError: Some environments have an observation space different from `Box([-4.8 ...], [4.8 ...], (4,), float32)`. In order to batch observations, the observation spaces from all environments must be equal.
 </pre></div>
 </div>
 <p>However, sometimes it may be handy to have access to the observation and action spaces of a particular sub-environment, and not the batched spaces. You can access those with the properties <code class="docutils literal notranslate"><span class="pre">VectorEnv.single_observation_space</span></code> and <code class="docutils literal notranslate"><span class="pre">VectorEnv.single_action_space</span></code> of the vectorized environment.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; envs.single_observation_space
 Box([-4.8 ...], [4.8 ...], (4,), float32)
 &gt;&gt;&gt; envs.single_action_space
@@ -484,7 +485,7 @@ Discrete(2)
 ...     logits = np.dot(observations, weights)
 ...     return softmax(logits, axis=1)
 
-&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; weights = np.random.randn(
 ...     flatdim(envs.single_observation_space),
 ...     envs.single_action_space.n
@@ -496,11 +497,11 @@ Discrete(2)
 </div>
 </section>
 <section id="intermediate-usage">
-<h2>Intermediate Usage<a class="headerlink" href="#intermediate-usage" title="Permalink to this headline">#</a></h2>
+<h2>Intermediate Usage<a class="headerlink" href="#intermediate-usage" title="Permalink to this heading">#</a></h2>
 <section id="shared-memory">
-<h3>Shared memory<a class="headerlink" href="#shared-memory" title="Permalink to this headline">#</a></h3>
+<h3>Shared memory<a class="headerlink" href="#shared-memory" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv</span></code> runs each sub-environment inside an individual process. At each call to <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv.reset</span></code> or <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv.step</span></code>, the observations of all of the sub-environments are sent back to the main process. To avoid expensive transfers of data between processes, especially with large observations (e.g. images), <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv</span></code> uses a shared memory by default (<code class="docutils literal notranslate"><span class="pre">shared_memory=True</span></code>) that processes can write to and read from at minimal cost. This can increase the throughout of the vectorized environment.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; env_fns = [lambda: gym.make("BreakoutNoFrameskip-v4")] * 5
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; env_fns = [lambda: gym.make(&quot;BreakoutNoFrameskip-v4&quot;)] * 5
 
 &gt;&gt;&gt; envs = gym.vector.AsyncVectorEnv(env_fns, shared_memory=False)
 &gt;&gt;&gt; envs.reset()
@@ -515,7 +516,7 @@ Discrete(2)
 </div>
 </section>
 <section id="exception-handling">
-<h3>Exception handling<a class="headerlink" href="#exception-handling" title="Permalink to this headline">#</a></h3>
+<h3>Exception handling<a class="headerlink" href="#exception-handling" title="Permalink to this heading">#</a></h3>
 <p>Because sometimes things may not go as planned, the exceptions raised in sub-environments are re-raised in the vectorized environment, even when the sub-environments run in parallel with <code class="docutils literal notranslate"><span class="pre">AsyncVectorEnv</span></code>. This way, you can choose how to handle these exceptions yourself (with <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span></code>).</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; class ErrorEnv(gym.Env):
 ...     observation_space = gym.spaces.Box(-1., 1., (2,), np.float32)
@@ -526,7 +527,7 @@ Discrete(2)
 ...
 ...     def step(self, action):
 ...         if action == 1:
-...             raise ValueError("An error occurred.")
+...             raise ValueError(&quot;An error occurred.&quot;)
 ...         observation = self.observation_space.sample()
 ...         return (observation, 0., False, {})
 
@@ -542,9 +543,9 @@ ValueError: An error occurred.
 </section>
 </section>
 <section id="advanced-usage">
-<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">#</a></h2>
+<h2>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading">#</a></h2>
 <section id="custom-spaces">
-<h3>Custom spaces<a class="headerlink" href="#custom-spaces" title="Permalink to this headline">#</a></h3>
+<h3>Custom spaces<a class="headerlink" href="#custom-spaces" title="Permalink to this heading">#</a></h3>
 <p>Vectorized environments will batch actions and observations if they are elements from standard Gym spaces, such as <code class="docutils literal notranslate"><span class="pre">gym.spaces.Box</span></code>, <code class="docutils literal notranslate"><span class="pre">gym.spaces.Discrete</span></code>, or <code class="docutils literal notranslate"><span class="pre">gym.spaces.Dict</span></code>. However, if you create your own environment with a custom action and/or observation space (inheriting from <code class="docutils literal notranslate"><span class="pre">gym.Space</span></code>), the vectorized environment will not attempt to automatically batch the actions/observations, and instead it will return the raw tuple of elements from all sub-environments.</p>
 <p>In the following example, we create a new environment <code class="docutils literal notranslate"><span class="pre">SMILESEnv</span></code>, whose observations are strings representing the <a class="reference external" href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">SMILES</a> notation of a molecular structure, with a custom observation space <code class="docutils literal notranslate"><span class="pre">SMILES</span></code>. The observations returned by the vectorized environment are contained in a tuple of strings.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">SMILES</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Space</span><span class="p">):</span>
@@ -556,11 +557,11 @@ ValueError: An error occurred.
 <span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbols</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">symbols</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">SMILESEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="n">observation_space</span> <span class="o">=</span> <span class="n">SMILES</span><span class="p">(</span><span class="s2">"][()CO="</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">observation_space</span> <span class="o">=</span> <span class="n">SMILES</span><span class="p">(</span><span class="s2">&quot;][()CO=&quot;</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="n">action_space</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">spaces</span><span class="o">.</span><span class="n">Discrete</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="s2">"["</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_state</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_state</span>
 <span class="gp">...</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
@@ -575,7 +576,7 @@ ValueError: An error occurred.
 <span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">observations</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">dones</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">envs</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">observations</span>
-<span class="go">('[(', '[O', '[C')</span>
+<span class="go">(&#39;[(&#39;, &#39;[O&#39;, &#39;[C&#39;)</span>
 </pre></div>
 </div>
 <p>Custom observation and action spaces may inherit from the <code class="docutils literal notranslate"><span class="pre">gym.Space</span></code> class. However, most use-cases should be covered by the existing space classes (e.g. <code class="docutils literal notranslate"><span class="pre">gym.spaces.Box</span></code>, <code class="docutils literal notranslate"><span class="pre">gym.spaces.Discrete</span></code>, etc…), and container classes (<code class="docutils literal notranslate"><span class="pre">gym.spaces.Tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">gym.spaces.Dict</span></code>). Moreover, some implementations of reinforcement learning algorithms might not handle custom spaces properly. Use custom spaces with care.</p>
@@ -583,63 +584,68 @@ ValueError: An error occurred.
 </section>
 </section>
 <section id="api-reference">
-<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">#</a></h2>
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h2>
 <section id="vectorenv">
-<h3>VectorEnv<a class="headerlink" href="#vectorenv" title="Permalink to this headline">#</a></h3>
+<h3>VectorEnv<a class="headerlink" href="#vectorenv" title="Permalink to this heading">#</a></h3>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.action_space">
 <span class="sig-prename descclassname"><span class="pre">gym.vector.VectorEnv.</span></span><span class="sig-name descname"><span class="pre">action_space</span></span><a class="headerlink" href="#gym.vector.VectorEnv.action_space" title="Permalink to this definition">#</a></dt>
 <dd><p>The (batched) action space. The input actions of <cite>step</cite> must be valid elements of <cite>action_space</cite>.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span><span class="o">.</span><span class="n">action_space</span>
 <span class="go">MultiDiscrete([2 2 2])</span>
 </pre></div>
 </div>
 </dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.observation_space">
 <span class="sig-prename descclassname"><span class="pre">gym.vector.VectorEnv.</span></span><span class="sig-name descname"><span class="pre">observation_space</span></span><a class="headerlink" href="#gym.vector.VectorEnv.observation_space" title="Permalink to this definition">#</a></dt>
 <dd><p>The (batched) observation space. The observations returned by <cite>reset</cite> and <cite>step</cite> are valid elements of <cite>observation_space</cite>.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span><span class="o">.</span><span class="n">observation_space</span>
 <span class="go">Box([[-4.8 ...]], [[4.8 ...]], (3, 4), float32)</span>
 </pre></div>
 </div>
 </dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.single_action_space">
 <span class="sig-prename descclassname"><span class="pre">gym.vector.VectorEnv.</span></span><span class="sig-name descname"><span class="pre">single_action_space</span></span><a class="headerlink" href="#gym.vector.VectorEnv.single_action_space" title="Permalink to this definition">#</a></dt>
 <dd><p>The action space of a sub-environment.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span><span class="o">.</span><span class="n">single_action_space</span>
 <span class="go">Discrete(2)</span>
 </pre></div>
 </div>
 </dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.single_observation_space">
 <span class="sig-prename descclassname"><span class="pre">gym.vector.VectorEnv.</span></span><span class="sig-name descname"><span class="pre">single_observation_space</span></span><a class="headerlink" href="#gym.vector.VectorEnv.single_observation_space" title="Permalink to this definition">#</a></dt>
 <dd><p>The observation space of a sub-environment.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">"CartPole-v1"</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">vector</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;CartPole-v1&quot;</span><span class="p">,</span> <span class="n">num_envs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">envs</span><span class="o">.</span><span class="n">single_action_space</span>
 <span class="go">Box([-4.8 ...], [4.8 ...], (4,), float32)</span>
 </pre></div>
 </div>
 </dd></dl>
+
 </section>
 <section id="reset">
-<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this headline">#</a></h3>
+<h3>Reset<a class="headerlink" href="#reset" title="Permalink to this heading">#</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.reset">
 <span class="sig-prename descclassname"><span class="pre">VectorEnv.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.vector.VectorEnv.reset" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset all sub-environments and return a batch of initial observations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>observations</strong> (element of <a class="reference internal" href="#gym.vector.VectorEnv.observation_space" title="gym.vector.VectorEnv.observation_space"><code class="xref py py-attr docutils literal notranslate"><span class="pre">observation_space</span></code></a>) – A batch of observations from the vectorized environment.</p>
 </dd>
 </dl>
 </dd></dl>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; envs.reset()
 array([[-0.04456399,  0.04653909,  0.01326909, -0.02099827],
         [ 0.03073904,  0.00145001, -0.03088818, -0.03131252],
@@ -649,16 +655,16 @@ array([[-0.04456399,  0.04653909,  0.01326909, -0.02099827],
 </div>
 </section>
 <section id="step">
-<h3>Step<a class="headerlink" href="#step" title="Permalink to this headline">#</a></h3>
+<h3>Step<a class="headerlink" href="#step" title="Permalink to this heading">#</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.step">
 <span class="sig-prename descclassname"><span class="pre">VectorEnv.</span></span><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.vector.VectorEnv.step" title="Permalink to this definition">#</a></dt>
 <dd><p>Take an action for each sub-environments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>actions</strong> (element of <a class="reference internal" href="#gym.vector.VectorEnv.action_space" title="gym.vector.VectorEnv.action_space"><code class="xref py py-attr docutils literal notranslate"><span class="pre">action_space</span></code></a>) – Batch of actions.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>observations</strong> (element of <a class="reference internal" href="#gym.vector.VectorEnv.observation_space" title="gym.vector.VectorEnv.observation_space"><code class="xref py py-attr docutils literal notranslate"><span class="pre">observation_space</span></code></a>) – A batch of observations from the vectorized environment.</p></li>
 <li><p><strong>rewards</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">np.ndarray</span></code>, dtype <code class="xref py py-obj docutils literal notranslate"><span class="pre">np.float_</span></code>) – A vector of rewards from the vectorized environment.</p></li>
@@ -668,7 +674,8 @@ array([[-0.04456399,  0.04653909,  0.01326909, -0.02099827],
 </dd>
 </dl>
 </dd></dl>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; envs.reset()
 &gt;&gt;&gt; actions = np.array([1, 0, 1])
 &gt;&gt;&gt; observations, rewards, dones, infos = envs.step(actions)
@@ -688,13 +695,13 @@ array([False, False, False])
 </div>
 </section>
 <section id="seed">
-<h3>Seed<a class="headerlink" href="#seed" title="Permalink to this headline">#</a></h3>
+<h3>Seed<a class="headerlink" href="#seed" title="Permalink to this heading">#</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="gym.vector.VectorEnv.seed">
 <span class="sig-prename descclassname"><span class="pre">VectorEnv.</span></span><span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gym.vector.VectorEnv.seed" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the random seed in all sub-environments.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>seed</strong> (<em>list of int</em><em>, or </em><em>int</em><em>, </em><em>optional</em>) – Random seed for each sub-environment. If <code class="docutils literal notranslate"><span class="pre">seed</span></code> is a list of
 length <code class="docutils literal notranslate"><span class="pre">num_envs</span></code>, then the items of the list are chosen as random
 seeds. If <code class="docutils literal notranslate"><span class="pre">seed</span></code> is an int, then each sub-environment uses the random
@@ -703,7 +710,8 @@ seed <code class="docutils literal notranslate"><span class="pre">seed</span> <s
 </dd>
 </dl>
 </dd></dl>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make("CartPole-v1", num_envs=3)
+
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; envs = gym.vector.make(&quot;CartPole-v1&quot;, num_envs=3)
 &gt;&gt;&gt; envs.seed([1, 3, 5])
 &gt;&gt;&gt; envs.reset()
 array([[ 0.03073904,  0.00145001, -0.03088818, -0.03131252],
@@ -810,6 +818,7 @@ array([[ 0.03073904,  0.00145001, -0.03088818, -0.03131252],
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     </body>

@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Spaces" href="../spaces/" /><link rel="prev" title="API" href="../api/" />
-        <link rel="canonical" href="www.gymlibrary.ml/content/environment_creation.html" />
+        <link rel="canonical" href="https://www.gymlibrary.ml/content/environment_creation.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
         <title>Environment Creation - Gym 0.23.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     
@@ -290,7 +290,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -305,10 +306,10 @@
         </div>
         <article role="main">
           <section id="environment-creation">
-<h1>Environment Creation<a class="headerlink" href="#environment-creation" title="Permalink to this headline">#</a></h1>
+<h1>Environment Creation<a class="headerlink" href="#environment-creation" title="Permalink to this heading">#</a></h1>
 <p>This documentation overviews creating new environments and relevant useful wrappers, utilities and tests included in OpenAI Gym designed for the creation of new environments.</p>
 <section id="example-custom-environment">
-<h2>Example Custom Environment<a class="headerlink" href="#example-custom-environment" title="Permalink to this headline">#</a></h2>
+<h2>Example Custom Environment<a class="headerlink" href="#example-custom-environment" title="Permalink to this heading">#</a></h2>
 <p>Here is a simple skeleton of the repository structure for a Python Package containing a custom environment. For a more complete example, please refer to: https://github.com/openai/gym-soccer.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gym-foo/
   README.md
@@ -323,14 +324,14 @@
 </div>
 </section>
 <section id="subclassing-gym-env">
-<h2>Subclassing gym.Env<a class="headerlink" href="#subclassing-gym-env" title="Permalink to this headline">#</a></h2>
+<h2>Subclassing gym.Env<a class="headerlink" href="#subclassing-gym-env" title="Permalink to this heading">#</a></h2>
 <p>We will first write the code for our custom environment in <code class="docutils literal notranslate"><span class="pre">gym-foo/gym_foo/envs/foo_env.py</span></code> - let’s call it <code class="docutils literal notranslate"><span class="pre">FooEnv</span></code>. All custom environments should subclass <code class="docutils literal notranslate"><span class="pre">gym.Env</span></code> and override the <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">reset</span></code>, <code class="docutils literal notranslate"><span class="pre">render</span></code>, <code class="docutils literal notranslate"><span class="pre">close</span></code>  methods like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gym</span>
 <span class="kn">from</span> <span class="nn">gym</span> <span class="kn">import</span> <span class="n">error</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">utils</span>
 <span class="kn">from</span> <span class="nn">gym.utils</span> <span class="kn">import</span> <span class="n">seeding</span>
 
 <span class="k">class</span> <span class="nc">FooEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
-    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'render.modes'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'human'</span><span class="p">]}</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;render.modes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">]}</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># TODO</span>
@@ -341,7 +342,7 @@
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># TODO</span>
         <span class="o">...</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'human'</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;human&#39;</span><span class="p">):</span>
         <span class="c1"># TODO</span>
         <span class="o">...</span>
     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -355,7 +356,7 @@
 <span class="kn">from</span> <span class="nn">gym.utils</span> <span class="kn">import</span> <span class="n">seeding</span>
 
 <span class="k">class</span> <span class="nc">FooExtraHardEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
-    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'render.modes'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'human'</span><span class="p">]}</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;render.modes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">]}</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># TODO</span>
@@ -366,7 +367,7 @@
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># TODO</span>
         <span class="o">...</span>
-    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'human'</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;human&#39;</span><span class="p">):</span>
         <span class="c1"># TODO</span>
         <span class="o">...</span>
     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -376,17 +377,17 @@
 </div>
 </section>
 <section id="registering-envs">
-<h2>Registering Envs<a class="headerlink" href="#registering-envs" title="Permalink to this headline">#</a></h2>
+<h2>Registering Envs<a class="headerlink" href="#registering-envs" title="Permalink to this heading">#</a></h2>
 <p>In order for the custom environments to be detected by OpenAI gym, they must be registered as follows. We will choose to put this code in <code class="docutils literal notranslate"><span class="pre">gym-foo/gym_foo/__init__.py</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gym.envs.registration</span> <span class="kn">import</span> <span class="n">register</span>
 
 <span class="n">register</span><span class="p">(</span>
-    <span class="nb">id</span><span class="o">=</span><span class="s1">'foo-v0'</span><span class="p">,</span>
-    <span class="n">entry_point</span><span class="o">=</span><span class="s1">'gym_foo.envs:FooEnv'</span><span class="p">,</span>
+    <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;foo-v0&#39;</span><span class="p">,</span>
+    <span class="n">entry_point</span><span class="o">=</span><span class="s1">&#39;gym_foo.envs:FooEnv&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">register</span><span class="p">(</span>
-    <span class="nb">id</span><span class="o">=</span><span class="s1">'foo-extrahard-v0'</span><span class="p">,</span>
-    <span class="n">entry_point</span><span class="o">=</span><span class="s1">'gym_foo.envs:FooExtraHardEnv'</span><span class="p">,</span>
+    <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;foo-extrahard-v0&#39;</span><span class="p">,</span>
+    <span class="n">entry_point</span><span class="o">=</span><span class="s1">&#39;gym_foo.envs:FooExtraHardEnv&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -398,13 +399,13 @@
 </div>
 </section>
 <section id="creating-a-package">
-<h2>Creating a Package<a class="headerlink" href="#creating-a-package" title="Permalink to this headline">#</a></h2>
+<h2>Creating a Package<a class="headerlink" href="#creating-a-package" title="Permalink to this heading">#</a></h2>
 <p>The last step is to structure our code as a Python package. This involves configuring <code class="docutils literal notranslate"><span class="pre">gym-foo/setup.py</span></code>. A minimal example of how to do so is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 
-<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'gym_foo'</span><span class="p">,</span>
-    <span class="n">version</span><span class="o">=</span><span class="s1">'0.0.1'</span><span class="p">,</span>
-    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span><span class="s1">'gym'</span><span class="p">]</span>  <span class="c1"># And any other dependencies foo needs</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;gym_foo&#39;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gym&#39;</span><span class="p">]</span>  <span class="c1"># And any other dependencies foo needs</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -488,6 +489,7 @@
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     </body>
