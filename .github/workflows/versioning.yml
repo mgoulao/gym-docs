@@ -44,5 +44,8 @@ jobs:
       - name: Checkout Github pages
         run: git checkout gh-pages
       
+      - name: Debug
+        run: ls
+
       - name: Inject Menu
         run: python ./scripts/inject_version_menu.py .
