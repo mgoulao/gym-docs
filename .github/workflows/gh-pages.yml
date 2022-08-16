@@ -30,12 +30,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/
           keep_files: true
-      
-      - name: Checkout Github pages
-        run: git checkout gh-pages
-
-      - name: Inject Menu
-        run: python ./scripts/inject_version_menu.py .
 
   inject:
     name: Inject Versions Menu
