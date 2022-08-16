@@ -609,9 +609,13 @@ v3 and beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noi
             margin: 0;
         }
         .versions_menu__list li {
-            font-size: 14px;
+        }
+        .versions_menu__list li a {
+            display: block;
             padding: 4px 10px;
+            font-size: 14px;
             color: var(--color-brand-primary, #2962ff);
+            text-decoration: none;
             cursor: pointer;
         }
         .versions_menu__list li:hover {
@@ -640,8 +644,8 @@ v3 and beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noi
                 const versions_list_elem = document.querySelector(".versions_menu__list");
                 for (const version of versions) {
                     const liElem = document.createElement("li");
-                    liElem.textContent = version
                     const aElem = document.createElement("a");
+                    aElem.textContent = version
                     
                     // https://domain.com/user/v1.2.0/content/index.html -> /v1.2.0/content/index.html
                     let currentPath = document.location.href.split(document.location.origin)[1];
