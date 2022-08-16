@@ -75,6 +75,7 @@
         fetch(apiUrl).then(response => {
             response.json().then(json => {
                 const versions = json.tree.filter(v => new RegExp(/[vV]?(\d+\.?)+/g).test(v.path)).map(v => v.path);
+                versions.reverse();
                 versions.unshift("master");
                 const list_elems = [];
                 const versions_list_elem = document.querySelector(".versions_menu__list");
