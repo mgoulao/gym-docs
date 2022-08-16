@@ -65,8 +65,8 @@ def recursive_injection(path):
     print(path)
     for item in os.listdir(path):
         item_path = os.path.join(path, item)
-        if os.path.isfile(item_path) and item.endswith(".html"):
-            print(item_path)
+        print(item_path)
+        if os.path.isfile(item_path) and item.endswith(".html") and not item.endswith("versions_menu.html"):
             inject_menu(item_path)
         elif os.path.isdir(item):
             recursive_injection(item_path)

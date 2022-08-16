@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v2
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt && git clone https://github.com/mgoulao/gym.git && pip install ./gym
+        run: pip install -r docs/requirements.txt && git clone https://github.com/openai/gym.git && pip install ./gym
       
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
@@ -50,9 +50,6 @@ jobs:
 
       - name: Inject Menu
         run: python ./scripts/inject_version_menu.py .
-
-      - name: Debug
-        run: git status
 
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
