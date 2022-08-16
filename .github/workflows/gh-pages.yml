@@ -51,6 +51,9 @@ jobs:
       - name: Inject Menu
         run: python ./scripts/inject_version_menu.py .
 
+      - name: Debug
+        run: git status
+
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
