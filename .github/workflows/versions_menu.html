@@ -6,7 +6,7 @@
         response.json().then(json => {
             const versions = json.tree.filter(v => new RegExp(/[vV]?(\d+\.?)+/g).test(v)) 
             console.log(json.tree)
-            console.log(version)
+            console.log(versions)
 
         })
     })
