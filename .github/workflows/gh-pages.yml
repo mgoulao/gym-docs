@@ -22,7 +22,7 @@ jobs:
         run: sphinx-build -b dirhtml -v docs/source build
   
       - name: Copy injection script
-        run: mkdir ./build/scripts && cp ./.github/workflows/inject_version_menu.py ./build/scripts/inject_version_menu.py 
+        run: mkdir ./build/scripts && cp ./.github/workflows/inject_version_menu.py ./build/scripts/inject_version_menu.py && cp ./.github/workflows/versions_menu.html ./build/scripts/versions_menu.html 
 
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
