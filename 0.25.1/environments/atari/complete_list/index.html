@@ -1181,23 +1181,31 @@
         fetch(apiUrl).then(response => {
             response.json().then(json => {
                 const versions = json.tree.filter(v => new RegExp(/[vV]?(\d+\.?)+/g).test(v.path)).map(v => v.path);
+                versions.reverse();
                 versions.unshift("master");
                 const list_elems = [];
                 const versions_list_elem = document.querySelector(".versions_menu__list");
                 for (const version of versions) {
-                    const elem = document.createElement("li");
-                    elem.textContent = version
-                    elem.onclick = () => {
-                        let currentPath = document.location.href.split(document.location.origin)[1];
-                        if (basePath !== "") {
-                            currentPath = currentPath.split(basePath)[1];
-                        }
-                        document.location.href = version === "master" ? 
-                                                `/${basePath}${currentPath}` : 
-                                                `/${basePath}/${version}${currentPath}`;
+                    const liElem = document.createElement("li");
+                    liElem.textContent = version
+                    const aElem = document.createElement("a");
+                    
+                    // https://domain.com/user/v1.2.0/content/index.html -> /v1.2.0/content/index.html
+                    let currentPath = document.location.href.split(document.location.origin)[1];
+                    if (basePath !== "") {
+                        currentPath = currentPath.split(basePath).slice(1).join("/");
                     }
-                    list_elems.push(elem);
-                    versions_list_elem.appendChild(elem);
+                    // /v1.2.0/content/index.html -> /content/index.html
+                    if (new RegExp(/[vV]?(\d+\.?)+/g).test(currentPath.split("/")[1])) {
+                        currentPath = "/" + currentPath.split("/").slice(2).join("/")
+                    }
+
+                    aElem.href = version === "master" ? 
+                                            `/${basePath}${currentPath}` : 
+                                            `/${basePath}/${version}${currentPath}`;
+                    liElem.appendChild(aElem);
+                    list_elems.push(liElem);
+                    versions_list_elem.appendChild(liElem);
                 }
             });
         });
