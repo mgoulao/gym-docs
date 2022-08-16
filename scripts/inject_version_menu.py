@@ -68,7 +68,7 @@ def recursive_injection(path):
         print(item_path)
         if os.path.isfile(item_path) and item.endswith(".html") and not item.endswith("versions_menu.html"):
             inject_menu(item_path)
-        elif os.path.isdir(item):
+        elif os.path.isdir(item_path):
             recursive_injection(item_path)
         else:
             continue
