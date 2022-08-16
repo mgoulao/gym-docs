@@ -18,6 +18,9 @@ jobs:
       
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
+  
+      - name: Copy injection script
+        run: mkdir ./build/scripts && cp ./.github/workflows/inject_version_menu.py ./build/scripts/inject_version_menu.py 
 
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -25,3 +28,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/
           keep_files: true
+      
+            - name: Checkout Github pages
+        run: git checkout gh-pages
+
+      - name: Inject Menu
+        run: python ./scripts/inject_version_menu.py .
