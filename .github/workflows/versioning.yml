@@ -2,7 +2,7 @@ name: Versioning
 on:
   push:
     tags: 
-      - 'v*'
+      - 'v?*.*.*'
 
 jobs:
   docs:
