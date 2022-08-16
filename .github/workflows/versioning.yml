@@ -19,7 +19,7 @@ jobs:
         uses: dawidd6/action-get-tag@v1
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt && git clone -b ${{steps.tag.outputs.tag}} -single-branch https://github.com/openai/gym.git  && pip install ./gym
+        run: pip install -r docs/requirements.txt && git clone -b ${{steps.tag.outputs.tag}} --single-branch https://github.com/openai/gym.git  && pip install ./gym
       
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
