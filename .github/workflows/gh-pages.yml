@@ -4,8 +4,24 @@ on:
     branches: [main]
 
 jobs:
+  cleaning:
+      name: Clean gh-pages
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+          with:
+            ref: gh-pages
+
+        - name: Remove non-version directories
+          run: find . -type d ! -name "*.*.*" -exec rm -r {} +
+
+        - name: Remove files
+          run: find . -maxdepth 1 -type f -delete
+
   docs:
     name: Generate Website
+    needs: cleaning
     runs-on: ubuntu-latest
     env:
       SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
