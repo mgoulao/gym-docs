@@ -6,14 +6,17 @@ on:
 
 jobs:
   docs:
-    name: Generate Website
+    name: Generate Website for new version
     runs-on: ubuntu-latest
     env:
       SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - uses: dawidd6/action-get-tag@v1
+
+      - name: Get tag
+        id: tag
+        uses: dawidd6/action-get-tag@v1
 
       - name: Install dependencies
         run: pip install -r docs/requirements.txt && git clone https://github.com/openai/gym.git && pip install ./gym
