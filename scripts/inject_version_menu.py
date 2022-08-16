@@ -66,7 +66,7 @@ if __name__ == "__main__":
     base_path = sys.argv[1]
     assert not base_path.strip() == "", "Provide a base path"
 
-    with open("./versions_menu.html", "r") as fp:
+    with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),"versions_menu.html"), "r") as fp:
         version_menu = fp.read()
 
     recursive_injection(base_path)
