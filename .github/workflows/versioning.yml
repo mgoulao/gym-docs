@@ -30,7 +30,7 @@ jobs:
         run: rm ./build/CNAME 
       
       - name: Copy injection script
-        run: cp ./.github/workflows/inject_version_menu.py ./build/scripts/inject_version_menu.py 
+        run: mkdir ./build/scripts && cp ./.github/workflows/inject_version_menu.py ./build/scripts/inject_version_menu.py 
 
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
