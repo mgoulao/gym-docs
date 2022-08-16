@@ -6,16 +6,17 @@ on:
 
 jobs:
   docs:
-    name: Generate Version Website
+    name: Generate Website
     runs-on: ubuntu-latest
     env:
       SPHINX_GITHUB_CHANGELOG_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - uses: dawidd6/action-get-tag@v1
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt && git clone https://github.com/mgoulao/gym.git && pip install ./gym
+        run: pip install -r docs/requirements.txt && git clone https://github.com/openai/gym.git && pip install ./gym
       
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
@@ -25,4 +26,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/
-          publish_branch: v2
+          destination_dir: ${{steps.tag.outputs.tag}}
