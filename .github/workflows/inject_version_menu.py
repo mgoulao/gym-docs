@@ -70,3 +70,4 @@ if __name__ == "__main__":
         version_menu = fp.read()
 
     recursive_injection(base_path)
+
