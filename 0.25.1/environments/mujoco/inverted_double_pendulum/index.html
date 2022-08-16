@@ -718,7 +718,10 @@ beyond take gym.make kwargs such as xml_file, ctrl_cost_weight, reset_noise_scal
                     const elem = document.createElement("li");
                     elem.textContent = version
                     elem.onclick = () => {
-                        const currentPath = document.location.href.split(basePath);
+                        let currentPath = document.location.href.split(document.location.origin)[1];
+                        if (basePath !== "") {
+                            currentPath = currentPath.split(basePath)[1];
+                        }
                         document.location.href = version === "master" ? 
                                                 `/${basePath}${currentPath}` : 
                                                 `/${basePath}/${version}${currentPath}`;

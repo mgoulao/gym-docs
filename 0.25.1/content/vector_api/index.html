@@ -907,7 +907,10 @@ array([[ 0.03073904,  0.00145001, -0.03088818, -0.03131252],
                     const elem = document.createElement("li");
                     elem.textContent = version
                     elem.onclick = () => {
-                        const currentPath = document.location.href.split(basePath);
+                        let currentPath = document.location.href.split(document.location.origin)[1];
+                        if (basePath !== "") {
+                            currentPath = currentPath.split(basePath)[1];
+                        }
                         document.location.href = version === "master" ? 
                                                 `/${basePath}${currentPath}` : 
                                                 `/${basePath}/${version}${currentPath}`;

@@ -803,7 +803,10 @@ the episode terminates when any of the following happens:</p>
                     const elem = document.createElement("li");
                     elem.textContent = version
                     elem.onclick = () => {
-                        const currentPath = document.location.href.split(basePath);
+                        let currentPath = document.location.href.split(document.location.origin)[1];
+                        if (basePath !== "") {
+                            currentPath = currentPath.split(basePath)[1];
+                        }
                         document.location.href = version === "master" ? 
                                                 `/${basePath}${currentPath}` : 
                                                 `/${basePath}/${version}${currentPath}`;
