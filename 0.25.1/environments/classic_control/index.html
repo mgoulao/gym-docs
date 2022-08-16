@@ -452,7 +452,7 @@
         Toggle Versions Menu
     </div>
     <div class="versions_menu__content">
-        <span>Version</span>
+        <span>Versions</span>
         <ul class="versions_menu__list"></ul>
     </div>
     <style>
@@ -466,7 +466,7 @@
         }
 
         .versions_menu__header {
-            padding: 8px 4px;
+            padding: 8px 10px;
             font-size: 14px;
             border-bottom: 1px solid var(--color-background-border, #eeebee);
             background-color: var(--color-background-secondary, #f8f9fb);
@@ -488,9 +488,8 @@
         }
         .versions_menu__content span {
             display: block;
-            padding: 8px;
+            padding: 8px 10px;
             font-size: 12px;
-            font-weight: 700;
             text-transform: uppercase;
             color: var(--color-foreground-muted, #646776);
         }
@@ -501,11 +500,12 @@
         }
         .versions_menu__list li {
             font-size: 14px;
-            padding: 2px 8px;
+            padding: 4px 10px;
+            color: var(--color-brand-primary, #2962ff);
             cursor: pointer;
         }
         .versions_menu__list li:hover {
-            background-color: var(--color-background-secondary, #f8f9fb)
+            background-color: var(--color-background-hover, #efeff4)
         }
     </style>
     <script>
