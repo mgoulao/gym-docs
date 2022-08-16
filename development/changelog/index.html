@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="prev" title="Third Party Environments" href="../../environments/third_party_environments/" />
         <link rel="canonical" href="https://www.gymlibrary.ml/development/changelog.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
         <title>Changelog - Gym 0.23.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
@@ -307,6 +307,31 @@
         <article role="main">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
+<section id="release-0-25-1">
+<h2>0.25.1<a class="headerlink" href="#release-0-25-1" title="Permalink to this heading">#</a></h2>
+<p><em>Released on 2022-07-26 - <a class="reference external" href="https://github.com/openai/gym/releases/tag/0.25.1">GitHub</a> - <a class="reference external" href="https://pypi.org/project/gym/0.25.1/">PyPI</a></em></p>
+<h1>Release notes</h1>
+<ul>
+<li>Added rendering for CliffWalking environment <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/younik/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/younik">@younik</a></li>
+<li><code>PixelObservationWrapper</code> only supports the new render API due to difficulty in supporting both old and new APIs. A warning is raised if the user is using the old API <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/vmoens/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/vmoens">@vmoens</a></li>
+</ul>
+<h3>Bug fix</h3>
+<ul>
+<li>Revert an incorrect edition on wrapper.FrameStack  <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/ZhiqingXiao/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/ZhiqingXiao">@ZhiqingXiao</a></li>
+<li>Fix reset bounds for mountain car <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/psc-g/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/psc-g">@psc-g</a></li>
+<li>Removed skipped tests causing bugs not to be caught <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/pseudo-rnd-thoughts/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pseudo-rnd-thoughts">@pseudo-rnd-thoughts</a></li>
+<li>Added backward compatibility for environments without metadata <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/pseudo-rnd-thoughts/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pseudo-rnd-thoughts">@pseudo-rnd-thoughts</a></li>
+<li>Fixed <code>BipedalWalker</code> rendering for RGB arrays <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/1b15/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/1b15">@1b15</a></li>
+<li>Fixed bug in <code>PixelObsWrapper</code> for using the new rendering <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/younik/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/younik">@younik</a></li>
+</ul>
+<h3>Typos</h3>
+<ul>
+<li>Rephrase observations' definition in Lunar Lander Environment <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/EvanMath/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/EvanMath">@EvanMath</a></li>
+<li>Top-docstring in <code>gym/spaces/dict.py</code> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Ice1187/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Ice1187">@Ice1187</a></li>
+<li>Several typos in <code>humanoidstandup_v4.py</code>, <code>mujoco_env.py</code>, and <code>vector_list_info.py</code> <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/timgates42/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/timgates42">@timgates42</a></li>
+<li>Typos in passive environment checker <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/pseudo-rnd-thoughts/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pseudo-rnd-thoughts">@pseudo-rnd-thoughts</a></li>
+<li>Typos in Swimmer rotations <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lin826/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lin826">@lin826</a></li>
+</ul></section>
 <section id="release-0-25-0">
 <h2>0.25.0<a class="headerlink" href="#release-0-25-0" title="Permalink to this heading">#</a></h2>
 <p><em>Released on 2022-07-13 - <a class="reference external" href="https://github.com/openai/gym/releases/tag/0.25.0">GitHub</a> - <a class="reference external" href="https://pypi.org/project/gym/0.25.0/">PyPI</a></em></p>
@@ -606,6 +631,7 @@ Therefore, install pygame using <code>pip install gym[box2d]</code> or <code>pip
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#release-0-25-1">0.25.1</a></li>
 <li><a class="reference internal" href="#release-0-25-0">0.25.0</a></li>
 <li><a class="reference internal" href="#release-0-24-1">0.24.1</a></li>
 <li><a class="reference internal" href="#release-0-24-0">0.24.0</a></li>
