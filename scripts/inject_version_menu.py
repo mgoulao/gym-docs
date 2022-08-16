@@ -26,10 +26,12 @@ class CustomHTMLParser(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag == "div":
-            if self.parsing_menu and self.open_divs == 0:
-                self.old_menu_lines.append(self.getpos()[0])
-                self.parsing_menu = False
-            self.open_divs -= 1
+            if self.parsing_menu:
+                if self.open_divs == 0:
+                    self.old_menu_lines.append(self.getpos()[0])
+                    self.parsing_menu = False
+                else:
+                    self.open_divs -= 1
         elif tag == "body":
             self.body_end_line = self.getpos()[0]
 
@@ -49,6 +51,7 @@ def inject_menu(path):
                 + arr_content[parser.body_end_line - 1 :]
             )
         else:
+            print(parser.old_menu_lines)
             arr_content = (
                 arr_content[: parser.old_menu_lines[0] - 1]
                 + [version_menu_html]
