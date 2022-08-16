@@ -2,6 +2,7 @@ name: Versioning
 on:
   push:
     tags: 
+      - '*'
 
 jobs:
   docs:
@@ -16,6 +17,8 @@ jobs:
       - name: Get tag
         id: tag
         uses: dawidd6/action-get-tag@v1
+        -with:
+          strip_v: true
 
       - name: Install dependencies
         run: pip install -r docs/requirements.txt && git clone -b ${{steps.tag.outputs.tag}} --single-branch https://github.com/openai/gym.git  && pip install ./gym
