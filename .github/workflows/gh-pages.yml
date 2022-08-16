@@ -29,7 +29,7 @@ jobs:
           publish_dir: ./build/
           keep_files: true
       
-            - name: Checkout Github pages
+      - name: Checkout Github pages
         run: git checkout gh-pages
 
       - name: Inject Menu
