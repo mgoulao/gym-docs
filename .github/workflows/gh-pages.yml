@@ -14,7 +14,7 @@ jobs:
             ref: gh-pages
 
         - name: Remove non-version directories
-          run: find . -type d ! -name "*.*.*" -exec rm -r {} +
+          run: find . -maxdepth 1 -type d ! -name "*.*.*" -exec rm -r {} +
 
         - name: Remove files
           run: find . -maxdepth 1 -type f -delete
