@@ -43,33 +43,9 @@ jobs:
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
   
-      - name: Copy injection script
-        run: mkdir ./build/scripts && cp ./.github/workflows/inject_version_menu.py ./build/scripts/inject_version_menu.py && cp ./.github/workflows/versions_menu.html ./build/scripts/versions_menu.html 
-
       - name: Upload to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/
           keep_files: true
-
-  inject:
-    name: Inject Versions Menu
-    needs: docs
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: gh-pages
-      - uses: actions/setup-python@v2
-
-      - name: Inject Menu
-        run: python ./scripts/inject_version_menu.py .
-
-      - name: Upload to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          keep_files: true
-          publish_dir: .
