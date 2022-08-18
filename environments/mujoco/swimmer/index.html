@@ -664,5 +664,24 @@ control and has a default value of 1e-4</p></li>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
-    </body>
+    
+
+<script>
+(() => {
+    fetch(`/gym-docs/_static/versions_menu.html`).then(response => {
+        response.text().then(text => {
+            const container = document.createElement("div");
+            container.innerHTML = text;
+            document.querySelector("body").appendChild(container);
+            // innerHtml doenst evaluate scripts, we need to add them dynamically
+            Array.from(container.querySelectorAll("script")).forEach(oldScript => {
+                const newScript = document.createElement("script");
+                Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+        });
+    });
+})()
+</script></body>
 </html>
