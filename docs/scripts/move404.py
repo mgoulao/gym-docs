@@ -6,7 +6,7 @@ if __name__ == "__main__":
         print("Provide a path")
     filePath = sys.argv[1]
 
-    with open(filePath, "w+") as fp:
+    with open(filePath, "r+") as fp:
         content = fp.read()
         content = content.replace('href="../', 'href="/').replace('src="../', 'src="/')
         fp.seek(0)
