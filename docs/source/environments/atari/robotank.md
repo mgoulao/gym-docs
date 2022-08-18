@@ -3,7 +3,7 @@ title: Robot Tank
 ---
 # Robot Tank
 
-```{figure} ../../static/videos/atari/robotank.gif 
+```{figure} ../../_static/videos/atari/robotank.gif 
 :width: 120px
 :name: Robotank
 ```
@@ -26,7 +26,7 @@ Game ends when all of your Robot Tanks are
 
 The game begins with one active Robot Tank and three reserves. 
 Your Robot Tank may get lost when it is hit by enemy
-    rocket fire - your video scrambles with static interference when this
+    rocket fire - your video scrambles with _static interference when this
     happens - or just become damaged - sensors report the damage by flashing on your control panel (look at V/C/R/T squares).
     
 You earn one bonus Robot Tank for every enemy squadron destroyed. The maximum

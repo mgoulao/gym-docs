@@ -5,7 +5,7 @@ title: Lunar Lander
 
 # Lunar Lander
 
-```{figure} ../../static/videos/box2d/lunar_lander.gif 
+```{figure} ../../_static/videos/box2d/lunar_lander.gif 
 :width: 200px
 :name: lunar_lander
 ```

@@ -5,7 +5,7 @@ title: Half Cheetah
 
 # Half Cheetah
 
-```{figure} ../../static/videos/mujoco/half_cheetah.gif 
+```{figure} ../../_static/videos/mujoco/half_cheetah.gif 
 :width: 200px
 :name: half_cheetah
 ```

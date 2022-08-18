@@ -3,7 +3,7 @@ title: Gravitar
 ---
 # Gravitar
 
-```{figure} ../../static/videos/atari/gravitar.gif 
+```{figure} ../../_static/videos/atari/gravitar.gif 
 :width: 120px
 :name: Gravitar
 ```

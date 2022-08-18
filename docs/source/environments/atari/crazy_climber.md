@@ -3,7 +3,7 @@ title: Crazy Climber
 ---
 # Crazy Climber
 
-```{figure} ../../static/videos/atari/crazy_climber.gif 
+```{figure} ../../_static/videos/atari/crazy_climber.gif 
 :width: 120px
 :name: CrazyClimber
 ```

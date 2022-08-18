@@ -5,7 +5,7 @@ title: Walker2D
 
 # Walker2D
 
-```{figure} ../../static/videos/mujoco/walker2d.gif 
+```{figure} ../../_static/videos/mujoco/walker2d.gif 
 :width: 200px
 :name: walker2d
 ```

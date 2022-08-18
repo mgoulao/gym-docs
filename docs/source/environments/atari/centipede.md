@@ -3,7 +3,7 @@ title: Centipede
 ---
 # Centipede
 
-```{figure} ../../static/videos/atari/centipede.gif 
+```{figure} ../../_static/videos/atari/centipede.gif 
 :width: 120px
 :name: Centipede
 ```

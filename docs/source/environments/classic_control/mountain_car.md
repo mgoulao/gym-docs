@@ -5,7 +5,7 @@ title: Mountain Car
 
 # Mountain Car
 
-```{figure} ../../static/videos/classic_control/mountain_car.gif 
+```{figure} ../../_static/videos/classic_control/mountain_car.gif 
 :width: 200px
 :name: mountain_car
 ```

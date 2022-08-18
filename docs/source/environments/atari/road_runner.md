@@ -3,7 +3,7 @@ title: Road Runner
 ---
 # Road Runner
 
-```{figure} ../../static/videos/atari/road_runner.gif 
+```{figure} ../../_static/videos/atari/road_runner.gif 
 :width: 120px
 :name: RoadRunner
 ```

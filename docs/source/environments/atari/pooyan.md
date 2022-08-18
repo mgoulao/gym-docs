@@ -3,7 +3,7 @@ title: Pooyan
 ---
 # Pooyan
 
-```{figure} ../../static/videos/atari/pooyan.gif 
+```{figure} ../../_static/videos/atari/pooyan.gif 
 :width: 120px
 :name: Pooyan
 ```

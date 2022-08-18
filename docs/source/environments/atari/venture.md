@@ -3,7 +3,7 @@ title: Venture
 ---
 # Venture
 
-```{figure} ../../static/videos/atari/venture.gif 
+```{figure} ../../_static/videos/atari/venture.gif 
 :width: 120px
 :name: Venture
 ```

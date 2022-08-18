@@ -5,7 +5,7 @@ title: Car Racing
 
 # Car Racing
 
-```{figure} ../../static/videos/box2d/car_racing.gif 
+```{figure} ../../_static/videos/box2d/car_racing.gif 
 :width: 200px
 :name: car_racing
 ```

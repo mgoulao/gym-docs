@@ -16,7 +16,7 @@ env = gym.make('CartPole-v0')
 ## Interacting with the Environment
 Gym implements the classic "agent-environment loop":
 
-```{figure} /static/diagrams/AE_loop.png
+```{figure} /_static/diagrams/AE_loop.png
 :width: 50%
 :align: center
 ```

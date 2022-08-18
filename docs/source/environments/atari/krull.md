@@ -3,7 +3,7 @@ title: Krull
 ---
 # Krull
 
-```{figure} ../../static/videos/atari/krull.gif 
+```{figure} ../../_static/videos/atari/krull.gif 
 :width: 120px
 :name: Krull
 ```

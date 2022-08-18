@@ -3,7 +3,7 @@ title: Skiing
 ---
 # Skiings
 
-```{figure} ../../static/videos/atari/skiing.gif 
+```{figure} ../../_static/videos/atari/skiing.gif 
 :width: 120px
 :name: Skiing
 ```

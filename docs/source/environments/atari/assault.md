@@ -3,7 +3,7 @@ title: Assault
 ---
 # Assault
 
-```{figure} ../../static/videos/atari/assault.gif 
+```{figure} ../../_static/videos/atari/assault.gif 
 :width: 120px
 :name: assault
 ```

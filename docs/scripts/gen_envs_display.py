@@ -91,7 +91,7 @@ def create_grid_cell(type_id, env_id, path):
             <a href="{path}{env_id}">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../{path}static/videos/{type_id}/{env_id}.gif">
+                        <img src="../../{path}_static/videos/{type_id}/{env_id}.gif">
                     </div>
                     <div class="cell__title">
                         <span>{' '.join(env_id.split('_')).title()}</span>
@@ -117,7 +117,7 @@ def generate_page(env, limit=-1, path=''):
 
 <html>
     <body>
-        <link rel="stylesheet" href="../../{path}static/css/env_pages.css">
+        <link rel="stylesheet" href="../../{path}_static/css/env_pages.css">
 
         <div class="env-grid">
             {cells}

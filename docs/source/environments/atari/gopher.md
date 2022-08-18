@@ -3,7 +3,7 @@ title: Gopher
 ---
 # Gopher
 
-```{figure} ../../static/videos/atari/gopher.gif 
+```{figure} ../../_static/videos/atari/gopher.gif 
 :width: 120px
 :name: Gopher
 ```

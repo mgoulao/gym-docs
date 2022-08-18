@@ -3,7 +3,7 @@ title: PrivateEye
 ---
 # PrivateEye
 
-```{figure} ../../static/videos/atari/private_eye.gif 
+```{figure} ../../_static/videos/atari/private_eye.gif 
 :width: 120px
 :name: PrivateEye
 ```

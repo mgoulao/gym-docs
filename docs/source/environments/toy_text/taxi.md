@@ -5,7 +5,7 @@ title: Taxi
 
 # Taxi
 
-```{figure} ../../static/videos/toy_text/taxi.gif 
+```{figure} ../../_static/videos/toy_text/taxi.gif 
 :width: 200px
 :name: taxi
 ```

@@ -3,7 +3,7 @@ title: Qbert
 ---
 # Qbert
 
-```{figure} ../../static/videos/atari/qbert.gif 
+```{figure} ../../_static/videos/atari/qbert.gif 
 :width: 120px
 :name: Qbert
 ```

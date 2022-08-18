@@ -3,7 +3,7 @@ title: SpaceInvaders
 ---
 # SpaceInvaders
 
-```{figure} ../../static/videos/atari/space_invaders.gif 
+```{figure} ../../_static/videos/atari/space_invaders.gif 
 :width: 120px
 :name: SpaceInvaders
 ```

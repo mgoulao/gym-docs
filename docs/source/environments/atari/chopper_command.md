@@ -3,7 +3,7 @@ title: Chopper Command
 ---
 # Chopper Command
 
-```{figure} ../../static/videos/atari/chopper_command.gif 
+```{figure} ../../_static/videos/atari/chopper_command.gif 
 :width: 120px
 :name: ChopperCommand
 ```

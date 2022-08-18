@@ -4,7 +4,7 @@ title: Alien
 
 # Alien
 
-```{figure} ../../static/videos/atari/alien.gif 
+```{figure} ../../_static/videos/atari/alien.gif 
 :width: 120px
 :name: alien
 ```

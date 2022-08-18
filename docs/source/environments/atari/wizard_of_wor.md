@@ -3,7 +3,7 @@ title: Wizard of Wor
 ---
 # Wizard of Wor
 
-```{figure} ../../static/videos/atari/wizard_of_wor.gif 
+```{figure} ../../_static/videos/atari/wizard_of_wor.gif 
 :width: 120px
 :name: WizardOfWor
 ```

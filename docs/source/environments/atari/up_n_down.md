@@ -3,7 +3,7 @@ title: Up n' Down
 ---
 # Up n' Down 
 
-```{figure} ../../static/videos/atari/up_n_down.gif 
+```{figure} ../../_static/videos/atari/up_n_down.gif 
 :width: 120px
 :name: UpNDown
 ```

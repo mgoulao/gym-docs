@@ -5,7 +5,7 @@ title: Pusher
 
 # Pusher
 
-```{figure} ../../static/videos/mujoco/pusher.gif 
+```{figure} ../../_static/videos/mujoco/pusher.gif 
 :width: 200px
 :name: pusher
 ```

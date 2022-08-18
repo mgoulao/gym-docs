@@ -10,7 +10,7 @@ grid:
 ---
 # Beam Rider
 
-```{figure} ../../static/videos/atari/beam_rider.gif 
+```{figure} ../../_static/videos/atari/beam_rider.gif 
 :width: 120px
 :name: BeamRider
 ```
