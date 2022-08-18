@@ -3,7 +3,7 @@ title: Berzerk
 ---
 # Berzerk
 
-```{figure} ../../_static/videos/atari/berzerk.gif 
+```{figure} ../../static/videos/atari/berzerk.gif 
 :width: 120px
 :name: Berzerk
 ```

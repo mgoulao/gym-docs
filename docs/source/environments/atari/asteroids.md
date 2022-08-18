@@ -3,7 +3,7 @@ title: Asteroids
 ---
 # Asteroids
 
-```{figure} ../../_static/videos/atari/asteroids.gif 
+```{figure} ../../static/videos/atari/asteroids.gif 
 :width: 120px
 :name: asteroids
 ```

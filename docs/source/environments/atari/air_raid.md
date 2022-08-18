@@ -4,7 +4,7 @@ title: Air Raid
 
 # Air Raid
 
-```{figure} ../../_static/videos/atari/air_raid.gif 
+```{figure} ../../static/videos/atari/air_raid.gif 
 :width: 120px
 :name: air_raid
 ```

@@ -3,7 +3,7 @@ title: Double Dunk
 ---
 # Double Dunk
 
-```{figure} ../../_static/videos/atari/double_dunk.gif 
+```{figure} ../../static/videos/atari/double_dunk.gif 
 :width: 120px
 :name: DoubleDunk
 ```

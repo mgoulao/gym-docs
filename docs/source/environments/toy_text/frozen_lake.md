@@ -5,7 +5,7 @@ title: Frozen Lake
 
 # Frozen Lake
 
-```{figure} ../../_static/videos/toy_text/frozen_lake.gif 
+```{figure} ../../static/videos/toy_text/frozen_lake.gif 
 :width: 200px
 :name: frozen_lake
 ```

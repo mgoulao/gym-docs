@@ -5,7 +5,7 @@ title: Humanoid
 
 # Humanoid
 
-```{figure} ../../_static/videos/mujoco/humanoid.gif 
+```{figure} ../../static/videos/mujoco/humanoid.gif 
 :width: 200px
 :name: humanoid
 ```

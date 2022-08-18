@@ -3,7 +3,7 @@ title: Boxing
 ---
 # Boxing
 
-```{figure} ../../_static/videos/atari/boxing.gif 
+```{figure} ../../static/videos/atari/boxing.gif 
 :width: 120px
 :name: Boxing
 ```

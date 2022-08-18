@@ -5,7 +5,7 @@ title: Humanoid Standup
 
 # Humanoid Standup
 
-```{figure} ../../_static/videos/mujoco/humanoid_standup.gif 
+```{figure} ../../static/videos/mujoco/humanoid_standup.gif 
 :width: 200px
 :name: humanoid_standup
 ```

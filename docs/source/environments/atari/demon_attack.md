@@ -3,7 +3,7 @@ title: Demon Attack
 ---
 # Demon Attack
 
-```{figure} ../../_static/videos/atari/demon_attack.gif 
+```{figure} ../../static/videos/atari/demon_attack.gif 
 :width: 120px
 :name: DemonAttack
 ```

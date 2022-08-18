@@ -5,7 +5,7 @@ title: Mountain Car Continuous
 
 # Mountain Car Continuous
 
-```{figure} ../../_static/videos/classic_control/mountain_car_continuous.gif 
+```{figure} ../../static/videos/classic_control/mountain_car_continuous.gif 
 :width: 200px
 :name: mountain_car_continuous
 ```

@@ -3,7 +3,7 @@ title: Phoenix
 ---
 # Phoenix
 
-```{figure} ../../_static/videos/atari/phoenix.gif 
+```{figure} ../../static/videos/atari/phoenix.gif 
 :width: 120px
 :name: Phoenix
 ```

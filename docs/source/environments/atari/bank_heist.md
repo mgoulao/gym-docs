@@ -3,7 +3,7 @@ title: Bank Heist
 ---
 # Bank Heist
 
-```{figure} ../../_static/videos/atari/bank_heist.gif 
+```{figure} ../../static/videos/atari/bank_heist.gif 
 :width: 120px
 :name: Bank Heist
 ```

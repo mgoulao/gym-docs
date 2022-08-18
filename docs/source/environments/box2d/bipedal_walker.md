@@ -5,7 +5,7 @@ title: Bipedal Walker
 
 # Bipedal Walker
 
-```{figure} ../../_static/videos/box2d/bipedal_walker.gif 
+```{figure} ../../static/videos/box2d/bipedal_walker.gif 
 :width: 200px
 :name: bipedal_walker
 ```

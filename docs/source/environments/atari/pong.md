@@ -3,7 +3,7 @@ title: Pong
 ---
 # Pong
 
-```{figure} ../../_static/videos/atari/pong.gif 
+```{figure} ../../static/videos/atari/pong.gif 
 :width: 120px
 :name: Pong
 ```

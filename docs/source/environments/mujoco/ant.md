@@ -5,7 +5,7 @@ title: Ant
 
 # Ant
 
-```{figure} ../../_static/videos/mujoco/ant.gif 
+```{figure} ../../static/videos/mujoco/ant.gif 
 :width: 200px
 :name: ant
 ```

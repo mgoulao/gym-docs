@@ -5,7 +5,7 @@ title: Swimmer
 
 # Swimmer
 
-```{figure} ../../_static/videos/mujoco/swimmer.gif 
+```{figure} ../../static/videos/mujoco/swimmer.gif 
 :width: 200px
 :name: swimmer
 ```

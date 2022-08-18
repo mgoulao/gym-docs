@@ -3,7 +3,7 @@ title: Elevator Action
 ---
 # Elevator Action
 
-```{figure} ../../_static/videos/atari/elevator_action.gif 
+```{figure} ../../static/videos/atari/elevator_action.gif 
 :width: 120px
 :name: ElevatorAction
 ```

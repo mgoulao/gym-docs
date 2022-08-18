@@ -3,7 +3,7 @@ title: Jamesbond
 ---
 # Jamesbond
 
-```{figure} ../../_static/videos/atari/jamesbond.gif 
+```{figure} ../../static/videos/atari/jamesbond.gif 
 :width: 120px
 :name: Jamesbond
 ```

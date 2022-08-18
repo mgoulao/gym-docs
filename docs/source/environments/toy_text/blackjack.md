@@ -5,7 +5,7 @@ title: Blackjack
 
 # Blackjack
 
-```{figure} ../../_static/videos/toy_text/blackjack.gif 
+```{figure} ../../static/videos/toy_text/blackjack.gif 
 :width: 200px
 :name: blackjack
 ```

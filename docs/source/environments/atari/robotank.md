@@ -3,7 +3,7 @@ title: Robot Tank
 ---
 # Robot Tank
 
-```{figure} ../../_static/videos/atari/robotank.gif 
+```{figure} ../../static/videos/atari/robotank.gif 
 :width: 120px
 :name: Robotank
 ```

@@ -3,7 +3,7 @@ title: Video Pinball
 ---
 # Video Pinball
 
-```{figure} ../../_static/videos/atari/video_pinball.gif 
+```{figure} ../../static/videos/atari/video_pinball.gif 
 :width: 120px
 :name: VideoPinball
 ```

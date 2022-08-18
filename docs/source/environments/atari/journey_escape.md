@@ -3,7 +3,7 @@ title: JourneyEscape
 ---
 # JourneyEscape
 
-```{figure} ../../_static/videos/atari/journey_escape.gif 
+```{figure} ../../static/videos/atari/journey_escape.gif 
 :width: 120px
 :name: JourneyEscape
 ```

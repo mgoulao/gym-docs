@@ -4,7 +4,7 @@ title: Amidar
 
 # Amidar
 
-```{figure} ../../_static/videos/atari/amidar.gif 
+```{figure} ../../static/videos/atari/amidar.gif 
 :width: 120px
 :name: amidar
 ```

@@ -5,7 +5,7 @@ title: Hopper
 
 # Hopper
 
-```{figure} ../../_static/videos/mujoco/hopper.gif 
+```{figure} ../../static/videos/mujoco/hopper.gif 
 :width: 200px
 :name: hopper
 ```

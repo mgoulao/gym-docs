@@ -3,7 +3,7 @@ title: Kung Fu Master
 ---
 # Kung Fu Master
 
-```{figure} ../../_static/videos/atari/kung_fu_master.gif 
+```{figure} ../../static/videos/atari/kung_fu_master.gif 
 :width: 120px
 :name: KungFuMaster
 ```

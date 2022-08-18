@@ -5,7 +5,7 @@ title: Reacher
 
 # Reacher
 
-```{figure} ../../_static/videos/mujoco/reacher.gif 
+```{figure} ../../static/videos/mujoco/reacher.gif 
 :width: 200px
 :name: reacher
 ```

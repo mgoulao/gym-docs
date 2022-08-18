@@ -5,7 +5,7 @@ title: Pendulum
 
 # Pendulum
 
-```{figure} ../../_static/videos/classic_control/pendulum.gif 
+```{figure} ../../static/videos/classic_control/pendulum.gif 
 :width: 200px
 :name: pendulum
 ```

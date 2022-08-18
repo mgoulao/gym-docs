@@ -5,7 +5,7 @@ title: Inverted Double Pendulum
 
 # Inverted Double Pendulum
 
-```{figure} ../../_static/videos/mujoco/inverted_double_pendulum.gif 
+```{figure} ../../static/videos/mujoco/inverted_double_pendulum.gif 
 :width: 200px
 :name: inverted_double_pendulum
 ```

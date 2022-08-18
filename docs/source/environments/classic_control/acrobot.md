@@ -5,7 +5,7 @@ title: Acrobot
 
 # Acrobot
 
-```{figure} ../../_static/videos/classic_control/acrobot.gif 
+```{figure} ../../static/videos/classic_control/acrobot.gif 
 :width: 200px
 :name: acrobot
 ```

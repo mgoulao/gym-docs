@@ -5,7 +5,7 @@ title: Cart Pole
 
 # Cart Pole
 
-```{figure} ../../_static/videos/classic_control/cart_pole.gif 
+```{figure} ../../static/videos/classic_control/cart_pole.gif 
 :width: 200px
 :name: cart_pole
 ```

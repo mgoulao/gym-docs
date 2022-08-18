@@ -3,7 +3,7 @@ title: Kangaroo
 ---
 # Kangaroo
 
-```{figure} ../../_static/videos/atari/kangaroo.gif 
+```{figure} ../../static/videos/atari/kangaroo.gif 
 :width: 120px
 :name: Kangaroo
 ```

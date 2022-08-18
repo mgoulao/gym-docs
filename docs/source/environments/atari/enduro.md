@@ -3,7 +3,7 @@ title: Enduro
 ---
 # Enduro
 
-```{figure} ../../_static/videos/atari/enduro.gif 
+```{figure} ../../static/videos/atari/enduro.gif 
 :width: 120px
 :name: Enduro
 ```

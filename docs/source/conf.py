@@ -70,8 +70,8 @@ napoleon_attr_annotations = True
 #
 html_theme = "furo"
 html_baseurl = "https://www.gymlibrary.ml"
-
-html_favicon = '_static/img/favicon.png'
+html_copy_source = False
+html_favicon = 'static/img/favicon.png'
 html_theme_options = {
     "light_logo": "img/gym_logo_black.svg",
     "dark_logo": "img/gym_logo_white.svg",
@@ -80,7 +80,7 @@ html_theme_options = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['static']
 
 html_css_files = [
     'css/custom.css',

@@ -3,7 +3,7 @@ title: Ms Pacman
 ---
 # Ms Pacman
  
-```{figure} ../../_static/videos/atari/ms_pacman.gif 
+```{figure} ../../static/videos/atari/ms_pacman.gif 
 :width: 120px
 :name: MsPacman
 ```

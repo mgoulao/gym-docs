@@ -3,7 +3,7 @@ title: Name This Game
 ---
 # Name This Game
 
-```{figure} ../../_static/videos/atari/name_this_game.gif 
+```{figure} ../../static/videos/atari/name_this_game.gif 
 :width: 120px
 :name: NameThisGame
 ```

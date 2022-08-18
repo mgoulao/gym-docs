@@ -3,7 +3,7 @@ title: Tutankham
 ---
 # Tutankham
 
-```{figure} ../../_static/videos/atari/tutankham.gif 
+```{figure} ../../static/videos/atari/tutankham.gif 
 :width: 120px
 :name: Tutankham
 ```

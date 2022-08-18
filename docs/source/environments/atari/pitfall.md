@@ -3,7 +3,7 @@ title: Pitfall
 ---
 # Pitfall
 
-```{figure} ../../_static/videos/atari/pitfall.gif 
+```{figure} ../../static/videos/atari/pitfall.gif 
 :width: 120px
 :name: Pitfall
 ```
