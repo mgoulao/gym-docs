@@ -76,9 +76,10 @@
 
         const basePath = "gym-docs";
         const apiUrl = "https://api.github.com/repos/mgoulao/gym-docs/git/trees/gh-pages";
+        const versionRegex = new RegExp(/[vV]?\d+\.\d+(\.?\d+)*/g);
         fetch(apiUrl).then(response => {
             response.json().then(json => {
-                const versions = json.tree.filter(v => new RegExp(/[vV]?(\d+\.?)+/g).test(v.path)).map(v => v.path);
+                const versions = json.tree.filter(v => versionRegex.test(v.path)).map(v => v.path);
                 versions.reverse();
                 versions.unshift("master");
                 const list_elems = [];
@@ -94,7 +95,7 @@
                         currentPath = currentPath.split(basePath).slice(1).join("/");
                     }
                     // /v1.2.0/content/index.html -> /content/index.html
-                    if (new RegExp(/[vV]?(\d+\.?)+/g).test(currentPath.split("/")[1])) {
+                    if (versionRegex.test(currentPath.split("/")[1])) {
                         currentPath = "/" + currentPath.split("/").slice(2).join("/")
                     }
 
