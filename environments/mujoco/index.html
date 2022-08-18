@@ -314,14 +314,14 @@
 
 <html>
     <body>
-        <link rel="stylesheet" href="../../static/css/env_pages.css">
+        <link rel="stylesheet" href="../../_static/css/env_pages.css">
 
         <div class="env-grid">
             
             <a href="ant">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/ant.gif">
+                        <img src="../../_static/videos/mujoco/ant.gif">
                     </div>
                     <div class="cell__title">
                         <span>Ant</span>
@@ -333,7 +333,7 @@
             <a href="half_cheetah">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/half_cheetah.gif">
+                        <img src="../../_static/videos/mujoco/half_cheetah.gif">
                     </div>
                     <div class="cell__title">
                         <span>Half Cheetah</span>
@@ -345,7 +345,7 @@
             <a href="hopper">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/hopper.gif">
+                        <img src="../../_static/videos/mujoco/hopper.gif">
                     </div>
                     <div class="cell__title">
                         <span>Hopper</span>
@@ -357,7 +357,7 @@
             <a href="humanoid_standup">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/humanoid_standup.gif">
+                        <img src="../../_static/videos/mujoco/humanoid_standup.gif">
                     </div>
                     <div class="cell__title">
                         <span>Humanoid Standup</span>
@@ -369,7 +369,7 @@
             <a href="humanoid">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/humanoid.gif">
+                        <img src="../../_static/videos/mujoco/humanoid.gif">
                     </div>
                     <div class="cell__title">
                         <span>Humanoid</span>
@@ -381,7 +381,7 @@
             <a href="inverted_double_pendulum">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/inverted_double_pendulum.gif">
+                        <img src="../../_static/videos/mujoco/inverted_double_pendulum.gif">
                     </div>
                     <div class="cell__title">
                         <span>Inverted Double Pendulum</span>
@@ -393,7 +393,7 @@
             <a href="inverted_pendulum">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/inverted_pendulum.gif">
+                        <img src="../../_static/videos/mujoco/inverted_pendulum.gif">
                     </div>
                     <div class="cell__title">
                         <span>Inverted Pendulum</span>
@@ -405,7 +405,7 @@
             <a href="reacher">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/reacher.gif">
+                        <img src="../../_static/videos/mujoco/reacher.gif">
                     </div>
                     <div class="cell__title">
                         <span>Reacher</span>
@@ -417,7 +417,7 @@
             <a href="swimmer">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/swimmer.gif">
+                        <img src="../../_static/videos/mujoco/swimmer.gif">
                     </div>
                     <div class="cell__title">
                         <span>Swimmer</span>
@@ -429,7 +429,7 @@
             <a href="walker2d">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/mujoco/walker2d.gif">
+                        <img src="../../_static/videos/mujoco/walker2d.gif">
                     </div>
                     <div class="cell__title">
                         <span>Walker2D</span>
@@ -513,7 +513,7 @@
 
 <script>
 (() => {
-    fetch(`/gym-docs/static/versions_menu.html`).then(response => {
+    fetch(`/gym-docs/_static/versions_menu.html`).then(response => {
         response.text().then(text => {
             const container = document.createElement("div");
             container.innerHTML = text;

@@ -1,5 +1,5 @@
 (() => {
-    fetch(`/gym-docs/static/versions_menu.html`).then(response => {
+    fetch(`/gym-docs/_static/versions_menu.html`).then(response => {
         response.text().then(text => {
             const container = document.createElement("div");
             container.innerHTML = text;
