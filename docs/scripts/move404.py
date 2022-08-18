@@ -11,3 +11,5 @@ if __name__ == "__main__":
         content = content.replace('href="../', 'href="/').replace('src="../', 'src="/')
         fp.seek(0)
         fp.truncate()
+
+        fp.write(content)
