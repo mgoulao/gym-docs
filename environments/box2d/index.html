@@ -314,14 +314,14 @@
 
 <html>
     <body>
-        <link rel="stylesheet" href="../../static/css/env_pages.css">
+        <link rel="stylesheet" href="../../_static/css/env_pages.css">
 
         <div class="env-grid">
             
             <a href="bipedal_walker">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/box2d/bipedal_walker.gif">
+                        <img src="../../_static/videos/box2d/bipedal_walker.gif">
                     </div>
                     <div class="cell__title">
                         <span>Bipedal Walker</span>
@@ -333,7 +333,7 @@
             <a href="car_racing">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/box2d/car_racing.gif">
+                        <img src="../../_static/videos/box2d/car_racing.gif">
                     </div>
                     <div class="cell__title">
                         <span>Car Racing</span>
@@ -345,7 +345,7 @@
             <a href="lunar_lander">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/box2d/lunar_lander.gif">
+                        <img src="../../_static/videos/box2d/lunar_lander.gif">
                     </div>
                     <div class="cell__title">
                         <span>Lunar Lander</span>
@@ -425,7 +425,7 @@
 
 <script>
 (() => {
-    fetch(`/gym-docs/static/versions_menu.html`).then(response => {
+    fetch(`/gym-docs/_static/versions_menu.html`).then(response => {
         response.text().then(text => {
             const container = document.createElement("div");
             container.innerHTML = text;

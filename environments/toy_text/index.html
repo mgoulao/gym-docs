@@ -314,14 +314,14 @@
 
 <html>
     <body>
-        <link rel="stylesheet" href="../../static/css/env_pages.css">
+        <link rel="stylesheet" href="../../_static/css/env_pages.css">
 
         <div class="env-grid">
             
             <a href="blackjack">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/toy_text/blackjack.gif">
+                        <img src="../../_static/videos/toy_text/blackjack.gif">
                     </div>
                     <div class="cell__title">
                         <span>Blackjack</span>
@@ -333,7 +333,7 @@
             <a href="frozen_lake">
                 <div class="env-grid__cell">
                     <div class="cell__image-container">
-                        <img src="../../static/videos/toy_text/frozen_lake.gif">
+                        <img src="../../_static/videos/toy_text/frozen_lake.gif">
                     </div>
                     <div class="cell__title">
                         <span>Frozen Lake</span>
@@ -411,7 +411,7 @@
 
 <script>
 (() => {
-    fetch(`/gym-docs/static/versions_menu.html`).then(response => {
+    fetch(`/gym-docs/_static/versions_menu.html`).then(response => {
         response.text().then(text => {
             const container = document.createElement("div");
             container.innerHTML = text;
