@@ -70,6 +70,7 @@ napoleon_attr_annotations = True
 # a list of builtin themes.
 #
 html_theme = "furo"
+html_title = "Gym Documentation"
 html_baseurl = "https://www.gymlibrary.ml"
 html_copy_source = False
 html_favicon = '_static/img/favicon.png'
