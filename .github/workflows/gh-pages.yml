@@ -47,7 +47,7 @@ jobs:
         run: sphinx-build -b html -v docs/source build/html
       
       - name: Move 404
-        run: mv ./build/html/404.html ./build/dirhtml/404.html
+        run: mv ./build/dirhtml/404/index.html ./build/dirhtml/404.html
 
       - name: Remove .doctrees
         run: rm -r ./build/dirhtml/.doctrees
