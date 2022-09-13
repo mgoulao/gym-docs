@@ -38,8 +38,14 @@ jobs:
       - uses: actions/setup-python@v2
 
       - name: Install dependencies
-        run: pip install -r docs/requirements.txt && git clone https://github.com/openai/gym.git && pip install ./gym
+        run: pip install -r docs/requirements.txt 
+        
+      - name: Install Gym
+        run: pip install mujoco && git clone https://github.com/openai/gym.git && pip install ./gym[accept-rom-license,box2d]
       
+      - name: Build Envs Docs
+        run: python docs/scripts/gen_mds.py
+
       - name: Build
         run: sphinx-build -b dirhtml -v docs/source build
 
