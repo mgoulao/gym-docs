@@ -71,7 +71,7 @@ napoleon_attr_annotations = True
 #
 html_theme = "furo"
 html_title = "Gym Documentation"
-html_baseurl = "https://www.gymlibrary.ml"
+html_baseurl = "https://mgoulao.github.io/gym-docs"
 html_copy_source = False
 html_favicon = '_static/img/favicon.png'
 html_theme_options = {
