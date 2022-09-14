@@ -16,7 +16,7 @@ LAYOUT = "env"
 
 pattern = re.compile(r'(?<!^)(?=[A-Z])')
 
-for env_spec in tqdm(gym.envs.registry.all()):
+for env_spec in tqdm(gym.envs.registry.values()):
     
     if any(x in str(env_spec.id) for x in kill_strs):
         continue
